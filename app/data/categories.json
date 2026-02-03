@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Antibiotics",
+      "icon": "💊",
+      "count": 42,
+      "description": "Broad-spectrum and targeted antibiotics for various infections",
+      "slug": "antibiotics"
+    },
+    {
+      "id": 2,
+      "name": "Analgesics & Antipyretics",
+      "icon": "🌡️",
+      "count": 28,
+      "description": "Medicines for pain relief and fever management",
+      "slug": "analgesics-antipyretics"
+    },
+    {
+      "id": 3,
+      "name": "Gastrointestinal",
+      "icon": "🩺",
+      "count": 22,
+      "description": "Products for acidity, ulcers, and digestive health",
+      "slug": "gastrointestinal"
+    },
+    {
+      "id": 4,
+      "name": "Injectables",
+      "icon": "💉",
+      "count": 19,
+      "description": "Sterile injectable formulations for hospital use",
+      "slug": "injectables"
+    },
+    {
+      "id": 5,
+      "name": "Cardiovascular",
+      "icon": "❤️",
+      "count": 26,
+      "description": "Medicines supporting heart and blood pressure care",
+      "slug": "cardiovascular"
+    },
+    {
+      "id": 6,
+      "name": "Nutraceuticals",
+      "icon": "🌿",
+      "count": 34,
+      "description": "Vitamins, minerals, and nutritional supplements",
+      "slug": "nutraceuticals"
+    }
+  ]
+}

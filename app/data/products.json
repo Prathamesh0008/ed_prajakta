@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Amoxicillin Capsules IP 500mg",
+      "category": "Antibiotics",
+      "slug": "amoxicillin-500mg-capsules",
+      "description": "Amoxicillin Capsules IP 500mg are widely used antibacterial medicines manufactured under GMP-compliant facilities to meet international quality standards.",
+      "features": [
+        "WHO-GMP certified manufacturing",
+        "Consistent potency and purity",
+        "Suitable for domestic and export markets",
+        "Blister and bottle packaging options"
+      ],
+      "price": "On Request",
+      "rating": 4.8,
+      "reviewCount": 64,
+      "image": "/products/amoxicillin-500mg.jpg",
+      "tags": ["Best Seller", "WHO-GMP", "High Demand"],
+      "inStock": true,
+      "specifications": {
+        "dosageForm": "Capsule",
+        "strength": "500mg",
+        "packaging": "10x10 Blister",
+        "shelfLife": "24 months"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Paracetamol Tablets IP 650mg",
+      "category": "Analgesics & Antipyretics",
+      "slug": "paracetamol-650mg-tablets",
+      "description": "Paracetamol Tablets IP 650mg are manufactured with strict quality control for effective pain and fever management.",
+      "features": [
+        "IP compliant formulation",
+        "Fast disintegration",
+        "Stable shelf life",
+        "Bulk supply available"
+      ],
+      "price": "On Request",
+      "rating": 4.9,
+      "reviewCount": 102,
+      "image": "/products/paracetamol-650mg.jpg",
+      "tags": ["Best Seller", "IP Certified"],
+      "inStock": true
+    },
+    {
+      "id": 3,
+      "name": "Azithromycin Tablets IP 500mg",
+      "category": "Antibiotics",
+      "slug": "azithromycin-500mg-tablets",
+      "description": "Azithromycin Tablets IP 500mg produced using advanced manufacturing processes to ensure quality, safety, and efficacy.",
+      "features": [
+        "High bioavailability",
+        "Export-quality standards",
+        "Consistent batch quality",
+        "Moisture-resistant coating"
+      ],
+      "price": "On Request",
+      "rating": 4.7,
+      "reviewCount": 51,
+      "image": "/products/azithromycin-500mg.jpg",
+      "tags": ["Featured", "Export Quality", "GMP"],
+      "inStock": true
+    },
+    {
+      "id": 4,
+      "name": "Pantoprazole Tablets IP 40mg",
+      "category": "Gastrointestinal",
+      "slug": "pantoprazole-40mg-tablets",
+      "description": "Pantoprazole Tablets IP 40mg are formulated for acid suppression and manufactured under stringent quality systems.",
+      "features": [
+        "Enteric-coated tablets",
+        "IP compliant",
+        "Stable formulation",
+        "Large-scale production capacity"
+      ],
+      "price": "On Request",
+      "rating": 4.6,
+      "reviewCount": 43,
+      "image": "/products/pantoprazole-40mg.jpg",
+      "tags": ["New", "IP", "Trusted Product"],
+      "inStock": true
+    },
+    {
+      "id": 5,
+      "name": "Ceftriaxone Injection 1g",
+      "category": "Injectables",
+      "slug": "ceftriaxone-injection-1g",
+      "description": "Ceftriaxone Injection 1g is a sterile injectable formulation manufactured in compliance with international quality norms.",
+      "features": [
+        "Sterile lyophilized powder",
+        "WHO-GMP certified facility",
+        "Hospital-grade quality",
+        "Export-ready packaging"
+      ],
+      "price": "On Request",
+      "rating": 4.9,
+      "reviewCount": 29,
+      "image": "/products/ceftriaxone-1g.jpg",
+      "tags": ["Best Seller", "Injectable", "WHO-GMP"],
+      "inStock": true
+    },
+    {
+      "id": 6,
+      "name": "Vitamin D3 Oral Solution",
+      "category": "Nutraceuticals",
+      "slug": "vitamin-d3-oral-solution",
+      "description": "Vitamin D3 Oral Solution manufactured with precise formulation standards to ensure stability and quality.",
+      "features": [
+        "Accurate dosing formulation",
+        "High stability",
+        "Pleasant taste profile",
+        "Available in multiple pack sizes"
+      ],
+      "price": "On Request",
+      "rating": 4.7,
+      "reviewCount": 58,
+      "image": "/products/vitamin-d3-solution.jpg",
+      "tags": ["Featured", "Nutraceutical", "High Quality"],
+      "inStock": true
+    }
+  ]
+}
