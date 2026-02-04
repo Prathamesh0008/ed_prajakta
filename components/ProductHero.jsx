@@ -1,3 +1,4 @@
+//edpharma-webshop\components\ProductHero.jsx
 'use client';
 import { ArrowRight, Shield, CheckCircle, Download } from "lucide-react";
 
@@ -31,10 +32,10 @@ export default function ProductHero() {
           </h2>
           
           {/* Description - Shorter */}
-          <p className="text-base lg:text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          {/* <p className="text-base lg:text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             Premium cleanroom equipment and consumables for pharmaceutical manufacturing, 
             research labs, and healthcare facilities. All products meet international quality standards.
-          </p>
+          </p> */}
           
           {/* Features - Compact layout */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">

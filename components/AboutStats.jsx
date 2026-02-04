@@ -30,7 +30,7 @@ export default function AboutStats() {
           <div className="relative">
             <div className="relative w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl">
               <img
-                src="/about/stats-image.jpg"
+                src="/stats-image.jpg"
                 alt="ED Pharma Manufacturing"
                 className="w-full h-full object-cover"
               />
@@ -60,7 +60,7 @@ export default function AboutStats() {
               and building lasting partnerships across the globe.
             </p>
             
-            {/* Stats Grid */}
+            {/* Stats Grid */}0000
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (
                 <div 
