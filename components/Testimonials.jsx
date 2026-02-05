@@ -1,4 +1,4 @@
-
+//edpharma-webshop\components\Testimonials.jsx
 import { Star, Quote } from "lucide-react";
 
 export default function Testimonials() {
@@ -42,8 +42,11 @@ export default function Testimonials() {
         <div className="grid lg:grid-cols-3 gap-8">
           
           {/* Testimonial 1 */}
-          <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-            <Quote className="absolute top-6 right-6 w-8 h-8 text-[#8B0035]/20" />
+        <div className="group relative bg-white rounded-2xl p-6 shadow-lg 
+h-[290px] flex flex flex-col gap-4
+hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+
+            <Quote className="absolute top-6 right-6 w-8 h-4 text-[#8B0035]/20" />
             
             <div className="flex items-center gap-4 mb-6">
               <div className="relative">
@@ -75,7 +78,10 @@ export default function Testimonials() {
           </div>
 
           {/* Testimonial 2 */}
-          <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div className="group relative bg-white rounded-2xl p-6 shadow-lg 
+h-[290px] flex flex flex-col gap-4
+hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+
             <Quote className="absolute top-6 right-6 w-8 h-8 text-[#8B0035]/20" />
             
             <div className="flex items-center gap-4 mb-6">
@@ -107,6 +113,7 @@ export default function Testimonials() {
             </p>
           </div>
 
+       
           {/* Rating Box */}
           <div className="relative rounded-2xl overflow-hidden group">
             <div 
@@ -168,123 +175,13 @@ export default function Testimonials() {
     </section>
   );
 }
-// //edpharma-webshop\components\Testimonials.jsx
-// import { Star } from "lucide-react";
 
-// export default function Testimonials() {
-//   const colors = {
-//     primary: "#8B0035",
-//     secondary: "#F4C430",
-//   };
 
-//   return (
-//     <section className="bg-white py-24">
-//       <div className="max-w-7xl mx-auto px-6">
 
-//         {/* TOP HEADER */}
-//         <div className="grid md:grid-cols-3 gap-12 items-start mb-16">
 
-//           {/* Left small label */}
-//           <div className="flex items-center gap-3">
-//             <span className="w-3 h-3 rounded-full bg-[#8B0035]" />
-//             <span className="text-sm font-semibold text-[#8B0035]">
-//               Testimonials
-//             </span>
-//           </div>
 
-//           {/* Center heading */}
-//           <h2 className="md:col-span-1 text-4xl font-extrabold text-gray-900 leading-tight">
-//             Trusted Feedback <br /> From Our Customers
-//           </h2>
 
-//           {/* Right description */}
-//           <p className="text-gray-600 leading-relaxed">
-//             ED Pharma is trusted by customers worldwide for quality,
-//             safety, and reliability in pharmaceutical solutions.
-//           </p>
-//         </div>
 
-//         {/* CONTENT */}
-//         <div className="grid lg:grid-cols-3 gap-8 items-stretch">
 
-//           {/* Testimonial 1 */}
-//           <div className="bg-gray-50 p-10 rounded-xl border">
-//             <p className="text-gray-700 leading-relaxed mb-8">
-//               ED Pharma products are reliable and effective.
-//               Their commitment to safety and quality truly stands out.
-//             </p>
 
-//             <div className="flex items-center gap-4">
-//               <img
-//                 src="/user1.jpg"
-//                 alt="Customer"
-//                 className="w-12 h-12 rounded-full object-cover"
-//               />
-//               <div>
-//                 <p className="font-semibold text-gray-900">
-//                   Catherine Alessia
-//                 </p>
-//                 <p className="text-sm text-[#8B0035]">Customer</p>
-//               </div>
-//             </div>
-//           </div>
 
-//           {/* Testimonial 2 */}
-//           <div className="bg-gray-50 p-10 rounded-xl border">
-//             <p className="text-gray-700 leading-relaxed mb-8">
-//               Consistent quality and professional service.
-//               ED Pharma is our trusted healthcare partner.
-//             </p>
-
-//             <div className="flex items-center gap-4">
-//               <img
-//                 src="/user2.jpg"
-//                 alt="Customer"
-//                 className="w-12 h-12 rounded-full object-cover"
-//               />
-//               <div>
-//                 <p className="font-semibold text-gray-900">
-//                   Edward Giovani
-//                 </p>
-//                 <p className="text-sm text-[#8B0035]">Customer</p>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Rating Box */}
-//           <div
-//             className="rounded-xl p-10 text-white flex flex-col justify-between"
-//             style={{
-//               background: `linear-gradient(135deg, ${colors.primary}, #5c0023)`,
-//             }}
-//           >
-//             <div>
-//               <div className="flex items-center gap-4 mb-6">
-//                 <h3 className="text-6xl font-extrabold">4.5</h3>
-//                 <div>
-//                   <div className="flex gap-1 mb-1">
-//                     {[...Array(5)].map((_, i) => (
-//                       <Star
-//                         key={i}
-//                         className="w-5 h-5"
-//                         fill={colors.secondary}
-//                         stroke={colors.secondary}
-//                       />
-//                     ))}
-//                   </div>
-//                   <p className="font-semibold">Client Ratings</p>
-//                 </div>
-//               </div>
-
-//               <p className="opacity-90 leading-relaxed">
-//                 Trusted by thousands of customers globally for
-//                 safe, effective, and compliant pharmaceutical products.
-//               </p>
-//             </div>
-//           </div>
-
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }

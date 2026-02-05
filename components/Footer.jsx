@@ -82,14 +82,7 @@ export default function Footer() {
                   Products
                 </Link>
               </li>
-              <li>
-                <Link 
-                  href="/manufacturers" 
-                  className="text-sm sm:text-base text-white/80 hover:text-[#F4C430] transition-colors inline-block py-0.5"
-                >
-                  Manufacturers
-                </Link>
-              </li>
+             
               <li>
                 <Link 
                   href="/contact" 
@@ -137,14 +130,14 @@ export default function Footer() {
                   Shipping & Returns
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link 
                   href="/order-tracking" 
                   className="text-sm sm:text-base text-white/80 hover:text-[#F4C430] transition-colors inline-block py-0.5"
                 >
                   Order Tracking
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link 
                   href="/regulatory-info" 

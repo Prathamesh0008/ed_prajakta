@@ -181,7 +181,7 @@ export default function ProductDetailsPage() {
                       >
                         -
                       </button>
-                      <span className="px-4 py-2 border-x border-gray-300 font-medium min-w-[60px] text-center">{quantity}</span>
+                      <span className="px-4 py-2 border-x border-gray-300 text-gray-600 font-medium min-w-[60px] text-center">{quantity}</span>
                       <button
                         onClick={incrementQuantity}
                         className="px-3 py-2 text-gray-600 hover:text-[#8B0035] transition-colors"
@@ -205,10 +205,10 @@ export default function ProductDetailsPage() {
                     Add to Cart
                   </button>
                   
-                  <button className="flex-1 py-3 border-2 border-[#F4C430] text-[#8B0035] font-semibold rounded-lg hover:bg-[#F4C430]/10 transition-all duration-300 flex items-center justify-center gap-2">
+                  {/* <button className="flex-1 py-3 border-2 border-[#F4C430] text-[#8B0035] font-semibold rounded-lg hover:bg-[#F4C430]/10 transition-all duration-300 flex items-center justify-center gap-2">
                     <Package className="w-4 h-4" />
                     Buy Now
-                  </button>
+                  </button> */}
                   
                   <div className="flex gap-2">
                     <button
@@ -231,21 +231,21 @@ export default function ProductDetailsPage() {
                   <div className="flex items-center gap-2">
                     <Truck className="w-4 h-4 text-[#8B0035]" />
                     <div>
-                      <div className="text-xs font-medium">Free Shipping</div>
+                      <div className="text-xs text-gray-600 font-medium">Free Shipping</div>
                       <div className="text-xs text-gray-600">Over $50</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
                     <RotateCcw className="w-4 h-4 text-[#8B0035]" />
                     <div>
-                      <div className="text-xs font-medium">30-Day Returns</div>
+                      <div className="text-xs text-gray-600 font-medium">30-Day Returns</div>
                       <div className="text-xs text-gray-600">Easy returns</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
                     <Shield className="w-4 h-4 text-[#8B0035]" />
                     <div>
-                      <div className="text-xs font-medium">Secure</div>
+                      <div className="text-xs  text-gray-600 font-medium">Secure</div>
                       <div className="text-xs text-gray-600">Payment</div>
                     </div>
                   </div>

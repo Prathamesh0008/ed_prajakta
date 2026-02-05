@@ -1,3 +1,8 @@
+
+
+
+
+
 // edpharma-webshop\app\auth\signup\page.jsx
 'use client';
 import { useState } from 'react';
@@ -5,6 +10,8 @@ import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumb';
+import { useAuth } from '@/app/context/AuthContext';
+
 import { 
   Mail, 
   Lock, 
@@ -21,6 +28,7 @@ import {
 import Link from 'next/link';
 
 export default function SignUpPage() {
+  const { signup } = useAuth();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -102,19 +110,21 @@ export default function SignUpPage() {
     setIsLoading(true);
     
     // Simulate API call
-    try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // For demo purposes, simulate successful registration
-      console.log('Registration attempt with:', formData);
-      
-      // Redirect to verification or home page
-      router.push('/account/profile');
-    } catch (error) {
-      setErrors({ submit: 'Registration failed. Please try again.' });
-    } finally {
-      setIsLoading(false);
-    }
+try {
+  const result = await signup(formData);
+
+  if (result?.success) {
+    router.push('/account/profile');
+  } else {
+    setErrors({ submit: 'Signup failed' });
+  }
+} catch (error) {
+  setErrors({ submit: 'Registration failed. Please try again.' });
+} finally {
+  setIsLoading(false);
+}
+
+
   };
 
   return (

@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import { ShoppingCart, Search } from "lucide-react";
 import { useCart } from "@/app/context/CartContext";
 import { useAuth } from "@/app/context/AuthContext";
+import { usePathname } from "next/navigation";
+
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +18,7 @@ export default function Navbar() {
   const { user, logout } = useAuth();
   const { cartItems } = useCart();
   const cartCount = cartItems.reduce((sum, item) => sum + item.qty, 0);
+const pathname = usePathname();
 
   const colors = {
     primary: "#8B0035",
@@ -51,7 +54,7 @@ export default function Navbar() {
         { label: "My Profile", href: "/account", icon: <User className="w-4 h-4" /> },
         { label: "My Orders", href: "/account/orders", icon: <ShoppingCart className="w-4 h-4" /> },
         { label: "Wishlist", href: "/account/wishlist" },
-        { label: "Settings", href: "/account/settings" },
+        
         { 
           label: "Logout", 
           href: "#", 
@@ -129,17 +132,30 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-0.5">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="flex items-center gap-1 px-3 sm:px-4 py-2 sm:py-2.5 text-gray-700 hover:text-[#8B0035] font-medium transition-colors rounded-lg hover:bg-gray-100 text-sm sm:text-base"
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
+           <nav className="hidden lg:flex items-center gap-0.5">
+ {navItems.map((item) => {
+  const isActive = pathname === item.href;
+
+  return (
+    <Link
+      key={item.label}
+      href={item.href}
+      onClick={() => setIsMenuOpen(false)}
+      className={`flex items-center justify-between px-3 sm:px-4 py-2.5 sm:py-3 
+        rounded-lg font-medium transition-colors text-sm sm:text-base
+        ${
+          isActive
+            ? "bg-[#8B0035]/10 text-[#8B0035]"
+            : "text-gray-700 hover:text-[#8B0035] hover:bg-gray-50"
+        }`}
+    >
+      {item.label}
+    </Link>
+  );
+})}
+
+</nav>
+
 
             {/* Search and Actions */}
             <div className="flex items-center gap-2 sm:gap-4">

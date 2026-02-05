@@ -1,3 +1,4 @@
+// app/context/AuthContext.js
 'use client';
 
 import { createContext, useContext, useState, useEffect } from 'react';
@@ -48,10 +49,9 @@ export function AuthProvider({ children }) {
         email: emailOrPhone.includes('@') ? emailOrPhone : null,
         phone: !emailOrPhone.includes('@') ? emailOrPhone : '9876543210',
         createdAt: new Date().toISOString(),
-        // Add more fields as needed
       };
 
-      // Store in localStorage (in production, use secure tokens)
+      // Store in localStorage
       localStorage.setItem('edpharma_user', JSON.stringify(mockUser));
       localStorage.setItem('edpharma_token', 'mock_jwt_token_' + Date.now());
       
@@ -78,7 +78,6 @@ export function AuthProvider({ children }) {
         phone: userData.phone,
         newsletter: userData.newsletter,
         createdAt: new Date().toISOString(),
-        // Initialize other fields
         address: '',
         city: '',
         state: '',
@@ -113,6 +112,67 @@ export function AuthProvider({ children }) {
     setUser(updatedUser);
   };
 
+  // NEW FUNCTIONS FOR ORDER MANAGEMENT
+
+  const addOrder = (orderData) => {
+    try {
+      // Get current user
+      const storedUser = localStorage.getItem('edpharma_user');
+      if (!storedUser) return { success: false, error: 'User not found' };
+
+      const user = JSON.parse(storedUser);
+      
+      // Get existing orders or initialize empty array
+      const existingOrders = JSON.parse(localStorage.getItem(`edpharma_orders_${user.id}`) || '[]');
+      
+      // Add new order with user ID
+      const newOrder = {
+        ...orderData,
+        userId: user.id,
+        createdAt: new Date().toISOString()
+      };
+      
+      const updatedOrders = [newOrder, ...existingOrders];
+      
+      // Save to localStorage
+      localStorage.setItem(`edpharma_orders_${user.id}`, JSON.stringify(updatedOrders));
+      
+      return { success: true, order: newOrder };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+  };
+
+  const getUserOrders = () => {
+    try {
+      const storedUser = localStorage.getItem('edpharma_user');
+      if (!storedUser) return [];
+
+      const user = JSON.parse(storedUser);
+      const orders = JSON.parse(localStorage.getItem(`edpharma_orders_${user.id}`) || '[]');
+      
+      return orders;
+    } catch (error) {
+      console.error('Error fetching user orders:', error);
+      return [];
+    }
+  };
+
+  const getOrderById = (orderId) => {
+    try {
+      const storedUser = localStorage.getItem('edpharma_user');
+      if (!storedUser) return null;
+
+      const user = JSON.parse(storedUser);
+      const orders = JSON.parse(localStorage.getItem(`edpharma_orders_${user.id}`) || '[]');
+      
+      return orders.find(order => order.id === orderId);
+    } catch (error) {
+      console.error('Error fetching order:', error);
+      return null;
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
@@ -122,10 +182,16 @@ export function AuthProvider({ children }) {
         login,
         signup,
         logout,
-        updateUser
+        updateUser,
+        addOrder,           // Add this
+        getUserOrders,      // Add this
+        getOrderById        // Add this
       }}
     >
       {children}
     </AuthContext.Provider>
   );
 }
+
+
+

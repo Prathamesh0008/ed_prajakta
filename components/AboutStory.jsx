@@ -5,7 +5,7 @@ export default function AboutStory() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           {/* Left Column - Title */}
           <div>
-            <div className="sticky top-24">
+            <div className="sticky top-8">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
                 About <br />
                 <span className="bg-gradient-to-r from-[#8B0035] to-[#F4C430] bg-clip-text text-transparent">
@@ -74,7 +74,7 @@ export default function AboutStory() {
             </div>
             
             {/* Years of Experience Card */}
-            <div className="mt-12 p-8 rounded-2xl bg-gradient-to-r from-[#8B0035]/5 to-[#F4C430]/5 border border-[#8B0035]/10">
+            <div className="mt-12 p-8 rounded-2xl bg-gradient-to-r from-[#8B0035]/5 to-[#F4C430]/5 border border-[#8B0035]/10 -ml-6">
               <div className="text-center">
                 <div className="text-6xl font-bold text-[#8B0035] mb-2">20+</div>
                 <div className="text-xl font-semibold text-gray-900">Years of Experience</div>
