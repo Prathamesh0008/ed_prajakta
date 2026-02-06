@@ -36,15 +36,19 @@ export default function ContactPage() {
         {/* Hero Section */}
         <div className="bg-gradient-to-r from-[#8B0035] to-[#6b0028] text-white py-16">
           <div className="max-w-7xl mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl max-w-3xl opacity-90">
+           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+  Contact Us
+</h1>
+<p className="text-base sm:text-lg md:text-xl max-w-3xl opacity-90">
+
              Have questions or need support? Reach out to our team for guidance on products, orders, or partnerships. ED Pharma is committed to providing reliable, high-quality service.
             </p>
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
+
             {/* Left Column - Contact Form */}
             <div>
               <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
@@ -100,18 +104,21 @@ export default function ContactPage() {
             {/* Right Column - Contact Information */}
             <div className="space-y-8">
               {/* Contact Details */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-200">
+              <div className="bg-white rounded-2xl shadow-xl p-5 sm:p-8 border border-gray-200">
+
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">Contact Information</h3>
                 
                 <div className="space-y-6">
                   {/* Phone */}
-                  <div className="flex items-start gap-4">
+               <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+
                     <div className="w-12 h-12 rounded-lg bg-[#8B0035]/10 flex items-center justify-center">
                       <Phone className="w-6 h-6 text-[#8B0035]" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-700 mb-1">Phone Number</h4>
-                      <p className="text-2xl font-bold text-[#8B0035]">+876 765 665</p>
+                      <p className="text-xl sm:text-2xl font-bold text-[#8B0035]">
++876 765 665</p>
                       <p className="text-gray-600 text-sm mt-1">Mon-Fri 9AM-6PM</p>
                     </div>
                   </div>
@@ -154,7 +161,8 @@ export default function ContactPage() {
                   <form onSubmit={handleSubscribe} className="space-y-3">
                     <div>
                       <label className="block text-sm font-semibold mb-2">Email</label>
-                      <div className="flex gap-2">
+                    <div className="flex flex-col sm:flex-row gap-3">
+
                         <input
                           type="email"
                           value={email}
@@ -188,7 +196,8 @@ export default function ContactPage() {
             <div className="p-8 border-b border-gray-200">
               <h3 className="text-2xl font-bold text-gray-800">Our Location</h3>
             </div>
-            <div className="h-96 bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center">
+           <div className="h-64 sm:h-80 md:h-96 bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center">
+
               <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-[#8B0035]/10 flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-8 h-8 text-[#8B0035]" />
