@@ -87,7 +87,8 @@ export default function CartPage() {
               </Link>
             </div>
           ) : (
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+
               {/* Left Column - Cart Items */}
               <div className="lg:col-span-2">
                 {/* Cart Items List */}
@@ -110,10 +111,10 @@ export default function CartPage() {
                   <div className="divide-y divide-gray-100">
                     {cartItems.map((item) => (
                       <div key={item.id} className="p-6 hover:bg-gray-50/50 transition-colors">
-                        <div className="flex gap-4">
+                        <div className="flex flex-col sm:flex-row gap-4">
                           {/* Product Image */}
                           <div className="relative">
-                            <div className="w-24 h-24 rounded-xl overflow-hidden border border-gray-200 bg-gray-50 flex items-center justify-center">
+                            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden border border-gray-200 bg-gray-50 flex items-center justify-center">
                               <img
                                 src={item.image}
                                 alt={item.name}
@@ -131,7 +132,8 @@ export default function CartPage() {
 
                           {/* Product Details */}
                           <div className="flex-1">
-                            <div className="flex justify-between items-start">
+                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2">
+
                               <div>
                                 <h3 className="font-bold text-gray-900">{item.name}</h3>
                                 <p className="text-sm text-gray-600 mt-1 line-clamp-2">
@@ -146,9 +148,11 @@ export default function CartPage() {
                               </button>
                             </div>
 
-                            <div className="flex items-center justify-between mt-4">
+                         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mt-4">
+
                               {/* Quantity Controls */}
-                              <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-1 sm:gap-2">
+
                                 <button
                                   onClick={() => updateQty(item.id, Math.max(1, item.qty - 1))}
                                   className="w-8 h-8 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
@@ -218,7 +222,8 @@ export default function CartPage() {
 
               {/* Right Column - Order Summary */}
               <div className="lg:col-span-1">
-                <div className="sticky top-6 space-y-6">
+               <div className="lg:sticky lg:top-6 space-y-6">
+
                   {/* Order Summary Card */}
                   <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
                     <h2 className="text-xl font-bold text-gray-900 mb-6">
@@ -308,22 +313,34 @@ export default function CartPage() {
                     </div>
                   </div>
 
-                  {/* Coupon Code */}
-                  <div className="bg-white rounded-2xl border border-gray-200 p-6">
-                    <h3 className="font-bold text-gray-900 mb-3">
-                      Have a coupon code?
-                    </h3>
-                    <div className="flex gap-2">
-                      <input
-                        type="text"
-                        placeholder="Enter code"
-                        className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-[#8B0035] outline-none"
-                      />
-                      <button className="px-4 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors">
-                        Apply
-                      </button>
-                    </div>
-                  </div>
+                 {/* Coupon Code */}
+<div className="bg-white rounded-2xl border border-gray-200 p-4 sm:p-6">
+  <h3 className="font-bold text-gray-900 mb-3 text-base sm:text-lg">
+    Have a coupon code?
+  </h3>
+
+  <div className="flex flex-col sm:flex-row gap-2">
+    <input
+      type="text"
+      placeholder="Enter code"
+      className="w-full sm:flex-1 px-4 py-3 sm:py-2
+        border border-gray-300 rounded-lg
+        text-sm sm:text-base
+        focus:ring-2 focus:ring-[#8B0035]
+        focus:border-[#8B0035]
+        outline-none"
+    />
+
+    <button
+      className="w-full sm:w-auto px-4 py-3 sm:py-2
+        bg-gray-100 text-gray-700 font-medium rounded-lg
+        hover:bg-gray-200 transition-colors"
+    >
+      Apply
+    </button>
+  </div>
+</div>
+
                 </div>
               </div>
             </div>

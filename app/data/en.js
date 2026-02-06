@@ -1,4 +1,3 @@
-
 //edpharma-webshop\app\data\en.js
 const products = {
   "kamagra-gold-50-mg": {
@@ -7,7 +6,7 @@ const products = {
     category: "Kamagra Gold",
     brand: "ED Ajanta Pharma",
     dosage: "50 mg",
-    price: "500",
+    price:300,
     composition: "Sildenafil Citrate 50mg",
     form: "Tablet",
     packSize: "1 x 4 Tablets",
@@ -205,6 +204,7 @@ const products = {
   "kamagra-100mg-oral-jelly-vol1": {
   id: "3",
   name: "Kamagra 100 mg Oral Jelly Vol 1 ",
+   slug: "kamagra-100mg-oral-jelly-vol1",
   category: "Kamagra Oral Jelly",
   brand: "ED Ajanta Pharma",
   dosage: "100 mg",
@@ -224,7 +224,7 @@ const products = {
 
   description:
     "Kamagra 100mg Oral Jelly contains sildenafil citrate in gel form and is aimed for oral use. It is an easily dissolvable drug.",
-  slug: "kamagra-100mg-oral-jelly-vol1",
+ 
   overview: [
     "Kamagra 100 mg Oral Jelly contains Sildenafil Citrate in an easy-to-consume gel format.",
     "It is designed for individuals who may prefer a faster-absorbing alternative to tablets.",
@@ -323,10 +323,10 @@ const products = {
     sildenafil: "139755-83-2",
     dapoxetine: "119356-77-3"
   },
-  image: "/products/Super-Kamagra-Oral-Jelly 2.png",
+  image: "/products/Super-Kamagra-Oral-Jelly2.png",
   "additionalImages": [
-    "/products/Super-Kamagra-Oral-Jelly 2.png",
-    "/products/Super-Kamagra-Oral-Jelly 2.png",
+    "/products/Super-Kamagra-Oral-Jelly1.png",
+    "/products/Super-Kamagra-Oral-Jelly.png",
   
   ],
   metaTitle:"Super Kamagra Oral Jelly Wholesale Supplier Europe | ED Pharma ",
@@ -433,11 +433,11 @@ const products = {
   pack_size: "1 x 4 Tablets",
   cas_id: "139755-83-2",
   description: "Kamagra 100 is used to treat erectile dysfunction by helping men to achieve and maintain an erection, when sexually aroused.",
-  slug: "kamagra-polo",
-  image: "/products/kamagra-polo 03.png",//public\products\kamagra-polo 03.png
+  slug: "kamagra-polo-en",
+  image: "/products/kamagra-polo03.png",//public\products\kamagra-polo 03.png
   "additionalImages": [
-    "/products/kamagra-polo1.png",//public\products\kamagra-polo1.png
-    "/products/kamagra-polo1.png",
+    "/products/kamagra-polo03.png",//public\products\kamagra-polo1.png
+    "/products/kamagra-polo03.png",
   
   ],
   metaTitle:"Kamagra 100mg Polo Fruit Jelly Bulk Supply Europe | ED Pharma ",
@@ -693,7 +693,7 @@ const products = {
   pack_size: "1 x 4 Tablets",
   cas_id: "139755-83-2",
   description: "Kamagra 100 is used to treat erectile dysfunction by helping men to achieve and maintain an erection, when sexually aroused.",
-  slug: "kamagra-100mg-chewable-orange",
+  slug: "kamagra-100mg-chewable-orange-en",
   image: "/products/kamagra-chewable-Orange.png",//public\products\kamagra-chewable-100mg-Orange.webp
   "additionalImages": [
     "/products/kamagra-chewable-100mg-Orange.webp",//public\products\kamagra-chewable-Orange.png
@@ -882,7 +882,7 @@ const products = {
   pack_size: "1 x 7 Effervescent Tablets",
   cas_id: "139755-83-2",
   description: "This in turn, allows stronger blood flow to enable an erection to take place.",
-  slug: "kamagra-100mg-effervescent",
+  slug: "kamagra-100mg-effervescent-en",
   image: "/products/kamagra-effervescent-100-mg.webp",//public\products\kamagra-effervescent-100-mg.webp
   "additionalImages": [
     "/products/kamagra-effervescent-100-mg.webp",
@@ -1074,12 +1074,12 @@ const products = {
     "dapoxetine": "119356-77-3"
   },
   description: "These drugs work by dilating the blood vessels in the body particularly around the genital area.",
-  slug: "super-kamagra-100-60",
+  slug: "super-kamagra-100-60-en",
  
-  image: "/products/Super_Kamagra_03.jpg",
+  image: "/products/100mg-super-kamagra-tablets.webp",
   "additionalImages": [
     "/products/100mg-super-kamagra-tablets.webp",
-    "/products/Super_Kamagra_03.jpg",
+    "/products/100mg-super-kamagra-tablets.webp",
   
   ],
   metaTitle:"Buy Super Kamagra 100/60mg Tablets Wholesale | European B2B Distributor ",
@@ -1266,7 +1266,7 @@ const products = {
   pack_size: "1 x 4 Tablets",
   cas_id: "139755-83-2",
   description: "Kamagra Export 100mg Tablet, an oral therapy for erectile dysfunction is the citrate salt of sildenafil a selective inhibitor of cyclic guanosine monophosphate.",
-  slug: "kamagra-expo-100mg",
+  slug: "kamagra-expo-100mg-en",
  image: "/products/kamagra100_1.png",//public\products\kamagra100_1.png
     "additionalImages": [
     "/products/kamagra100_2.png",
@@ -1456,11 +1456,11 @@ const products = {
   pack_size: "7 x 5 gm Sachets",
   cas_id: "171596-29-5",
   description: "These drugs work by dilating the blood vessels in the body; particularly around the genital area.",
-  slug: "apcalis-sx-20mg-oral-jelly",
-  image: "/products/apcalis-sx-oral-jelly 2.png",//public\products\apcalis-sx-oral-jelly 2.png
+  slug: "apcalis-sx-20mg-oral-jelly-en",
+  image: "/products/apcalis-sx-oral-jelly-3.png",//public\products\apcalis-sx-oral-jelly 2.png
   "additionalImages": [
     "/products/apcalis-sx-oral-jelly-3.png",
-    "/products/apcalis-sx-oral-jelly.png",
+    "/products/apcalis-sx-oral-jelly-3.png",
   ],
   metaTitle:"Apcalis SX 20mg Oral Jelly Supplier | European B2B Tadalafil ",
   metaDescription:"Leading B2B wholesaler of Apcalis SX 20mg Tadalafil Oral Jelly across Europe. Weekend medication lasting 36+ hours in fruit-flavored jelly form. Bulk supply of Lovegra female viagra 100mg, Valif 20mg price, Kamagra expo 100mg. Contact for wholesale inquiries. ",
@@ -1644,7 +1644,7 @@ const products = {
   pack_size: "1 x 4 Tablets",
   cas_id: "171596-29-5",
   description: "These drugs work by dilating the blood vessels in the body particularly around the genital area.",
-  slug: "tadalis-sx-20mg",
+  slug: "tadalis-sx-20mg-en",
   image: "/products/Tadalis-SX-20mg.webp",
   "additionalImages": [
     "/products/Tadalis-SX-20mg 2.png",
@@ -1833,7 +1833,7 @@ const products = {
   pack_size: "7 x 5 gm Sachets",
   cas_id: "139755-83-2",
   description: "Lovegra Oral Jelly (Female Sildenafil Citrate 100 mg Jelly) is a fast acting and effective medicine which has been specially formulated for the treatment of female sexual arousal disorder (FSAD) and female sexual dysfunction (FSD).",
-  slug: "lovegra-100mg-oral-jelly",
+  slug: "lovegra-100mg-oral-jelly-en",
   image: "/products/lovegra-oral-jelly-1.png",
   "additionalImages": [
     "/products/lovegra-oral-jelly-2.png",
@@ -2210,11 +2210,11 @@ const products = {
   pack_size: "1 x 10 Tablets",
   cas_id: "224785-90-4",
   description: "It increases blood flow to the penis to help men get an erection.",
-  slug: "valif-20mg-tablet",
-  image: "/products/valif 20 1.png",
+  slug: "valif-20mg-tablet-en",
+  image: "/products/valif20-1.png",
   "additionalImages": [
-    "/products/valif 20 2.png",
-    "/products/valif 20 1.png",
+    "/products/valif20-1.png",
+    "/products/valif20-1.png",
   
   ],
   metaTitle:"Valif 20mg Tablet Wholesale Supplier in Europe | Buy Valif 20 in Bulk ",
@@ -2399,11 +2399,11 @@ const products = {
   pack_size: "7 x 5 gm Sachets",
   cas_id: "224785-90-4",
   description: "Vardenafil 20mg Oral Jelly are used in the treatment of sexual problems in men such as erectile dysfunction and impotence.",
-  slug: "valif-20mg-oral-jelly",
-  image: "/products/valif 20 2.png",
+  slug: "valif-20mg-oral-jelly-en",
+  image: "/products/valif20-2.png",
   "additionalImages": [
-    "/products/valif 20 2.png",
-    "/products/valif 20 1.png",
+    "/products/valif20-2.png",
+    "/products/valif20-1.png",
   
   ],
   metaTitle:" Valif Oral Jelly 20mg ED Pharma Wholesale Europe | Buy in Bulk",
@@ -2589,7 +2589,7 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "139755-83-2",
   description: "It’s an alternative medicine for Viagra at a cost-effective rate.",
-  slug: "cenforce-25mg",
+  slug: "cenforce-25mg-en",
   image: "/products/cenforce-25-side.png",//public\products\cenforce-25-side.png
   "additionalImages": [
     "/products/cenforce-25-side.png",
@@ -2779,11 +2779,11 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "139755-83-2",
   description: "It is a drug for erectile dysfunction treatment and known as a male impotency drug.",
-  slug: "cenforce-50mg",
-  image: "/products/cenforce-50-mg-1-side 1.png",
+  slug: "cenforce-50mg-en",
+  image: "/products/cenforce-50-mg-1-side1.png",
    "additionalImages": [
-    "/products/cenforce-50-mg-1-side 1.png",
-    "/products/cenforce-50-mg-1-side 1.png",
+    "/products/cenforce-50-mg-1-side1.png",
+    "/products/cenforce-50-mg-1-side1.png",
 
   ],//public\products\cenforce 50.png
   metaTitle:"Cenforce 50mg Wholesale Supplier Europe | ED Pharma Distributor ",
@@ -2969,7 +2969,7 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "139755-83-2",
   description: "Cenforce stops the activity of the enzyme which allows the muscles of the blood vessels of the penis to relax creating an increased flow of blood.",
-  slug: "cenforce-100mg",
+  slug: "cenforce-100mg-en",
   image: "/products/cenforce_100mg_2.png",
    "additionalImages": [
     "/products/cenforce_100mg.png",
@@ -3157,7 +3157,7 @@ const products = {
   pack_size: "10 x 5 Tablets",
   cas_id: "139755-83-2",
   description: "This medicine helps men attain an enjoyable experience by improving overall sexual performance.",
-  slug: "cenforce-120mg",
+  slug: "cenforce-120mg-en",
   image: "/products/cenforce_120_mg_1.webp",
  "additionalImages": [
     "/products/cenforce_120_mg_2.webp",
@@ -3345,7 +3345,7 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "139755-83-2",
   description: "It is used for treating erectile dysfunction condition in men.",
-  slug: "cenforce-130mg",
+  slug: "cenforce-130mg-en",
   image: "/products/cenforce_130.png",
  "additionalImages": [
     "/products/cenforce 130.png",
@@ -3533,11 +3533,11 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "139755-83-2",
   description: "It is used for erectile dysfunction treatment, a condition in which the correct erection of the penis doesn’t occur.",
-  slug: "cenforce-150mg",
-  image: "/products/cenforce 150_1.png",
+  slug: "cenforce-150mg-en",
+  image: "/products/cenforce150_1.png",
    "additionalImages": [
-    "/products/cenforce 150_2.png",
-    "/products/cenforce 150_1.png",
+    "/products/cenforce150_1.png",
+    "/products/cenforce150_1.png",
   
   ],
   metaTitle:"Cenforce 150mg ED Pharma Wholesale Europe | Buy in Bulk",
@@ -3723,11 +3723,11 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "139755-83-2",
   description: "It is the highest dosage form of sildenafil citrate and therefore, should only be used in extreme cases of erectile dysfunction.",
-  slug: "cenforce-200mg",
-  image: "/products/Cenforce 200_1.png",
+  slug: "cenforce-200mg-en",
+  image: "/products/Cenforce200_1.png",
    "additionalImages": [
-    "/products/Cenforce 200_2.png",
-    "/products/Cenforce 200_1.png",
+    "/products/Cenforce200_2.png",
+    "/products/Cenforce200_1.png",
   
   ],
   metaTitle:"Cenforce 200mg ED Pharma Importer Europe | Wholesale Sildenafil ",
@@ -3907,11 +3907,11 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "139755-83-2",
   description: "It contains Sildenafil Citrate as the active ingredient.",
-  slug: "cenforce-soft-100mg",
-  image: "/products/Cenforce soft 100_1.png",
+  slug: "cenforce-soft-100-en",
+  image: "/products/Cenforce-soft100_1.png",
    "additionalImages": [
-    "/products/Cenforce soft 100_2.png",
-    "/products/Cenforce soft 100_1.png",
+    "/products/Cenforce-soft100_1.png",
+    "/products/Cenforce-soft100_1.png",
   
   ],
   metaTitle:"Cenforce Soft 100mg ED Pharma Exporter Europe | Bulk Soft Sildenafil Supply ",
@@ -4099,7 +4099,7 @@ const products = {
     "dapoxetine": "119356-77-3"
   },
   description: "Cenforce-D is a new form of hybrid combination treatment for erectile dysfunction and premature ejaculation.",
-  slug: "cenforce-d-100-60",
+  slug: "ccenforce-d-100-60-en",
   image: "/products/cenforce-d_1.png",
    "additionalImages": [
     "/products/cenforce-d_1.png",
@@ -4288,7 +4288,7 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "139755-83-2",
   description: "Cenforce-FM is one of the tablets known as the “female”. It contains 100mg of the active ingredient Sildenafil citrate.",
-  slug: "cenforce-fm-100mg",
+  slug: "cenforce-fm-100-en",
   image: "/products/cenforce-fm-100-mg-1.png",
  "additionalImages": [
     "/products/Cenforce fm_2.png",
@@ -4476,11 +4476,11 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "139755-83-2",
   description: "Cenforce Professional can be taken at least 30 minutes prior to having sex. But ideally, for it to be highly effective and give the best results, Cenforce should be taken an hour prior to engaging in sexual activity.",
-  slug: "cenforce-professional",
-  image: "/products/Cenforce professional_1.png",
+  slug: "cenforce-professional-en",
+  image: "/products/Cenforce-professional_1.png",
    "additionalImages": [
-    "/products/Cenforce professional_2.png",
-    "/products/cenforce-professional-100-mg-1-front.png",
+    "/products/Cenforce-professional_1.png",
+    "/products/Cenforce-professional_1.png",
   
   ],
   metaTitle:"Buy Cenforce Professional ED Pharma Wholesale Europe | ED Tablets ",
@@ -4665,11 +4665,11 @@ const products = {
   pack_size: "7 x 5gm Sachets",
   cas_id: "139755-83-2",
   description: "Sildenafil 100mg Oral Jelly medication is a phosphodiesterase type 5 (PDE5) inhibitor, prescribed for erectile dysfunction (impotence).",
-  slug: "cenforce-oral-jelly-100mg",
-  image: "/products/Cenforce oral jelly.png",
+  slug: "cenforce-oral-jelly-100-en",
+  image: "/products/Cenforce-oraljelly.png",
    "additionalImages": [
-    "/products/cenforce oral jelly 2.png",
-    "/products/Cenforce oral jelly.png",
+    "/products/Cenforce-oraljelly.png",
+    "/products/Cenforce-oraljelly.png",
   
   ],
   metaTitle:"Cenforce Oral Jelly 100mg ED Pharma Wholesale Europe | Buy in Bulk ",
@@ -4849,7 +4849,7 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "171596-29-5",
   description: "Vidalista 2.5 mg contains the active ingredient Tadalafil, which is used to treat erectile dysfunction in men.",
-  slug: "vidalista-2-5mg",
+  slug: "vidalista-2-5mg-en",
   image: "/products/vidalista2.5_2.png",//public\products\vidalista2.5_2.png
  "additionalImages": [
     "/products/vidalista2.5_2.png",//public\products\vidalista2.5_1.png
@@ -5037,7 +5037,7 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "171596-29-5",
   description: "It is only used to treat the physical problems associated with erectile dysfunction.",
-  slug: "vidalista-5",
+  slug: "vidalista-5-en",
   image: "/products/vidalista-5mg-tadalafil-tablets.png",//vidalista-5mg-0005-1000x1000.webp
    "additionalImages": [
     "/products/vidalista-5mg-tadalafil-tablets.png",
@@ -5225,7 +5225,7 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "171596-29-5",
   description: "It is only used to treat the physical problems associated with erectile dysfunction.",
-  slug: "vidalista-10mg",
+  slug: "vidalista-10-en",
   image: "/products/vidalista-10-box.webp",
    "additionalImages": [
     "/products/Vidalista-10-mg.jpg",
@@ -5414,7 +5414,7 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "171596-29-5",
   description: "Only used to treat the physical problems associated with erectile dysfunction.",
-  slug: "vidalista-20mg",
+  slug: "vidalista-20mg-en",
   image: "/products/Vidalista_1.webp",
  "additionalImages": [
     "/products/Vidalista_2.webp",
@@ -5603,7 +5603,7 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "171596-29-5",
   description: "Only used to treat the physical problems associated with erectile dysfunction.",
-  slug: "vidalista-40mg",
+  slug: "vidalista-40mg-en",
   image: "/products/vidalista_40mg_1.webp",
  "additionalImages": [
     "/products/vidalista-40mg_2.webp",
@@ -5791,7 +5791,7 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "171596-29-5",
   description: "This enhances the blood flow to the male penile organ resulting in a rigid erection for a longer time.",
-  slug: "vidalista-60mg",
+  slug: "vvidalista-60mg-en",
   image: "/products/vidalista-60mg_1.webp",
  "additionalImages": [
     "/products/vidalista-60mg_2.webp",
@@ -5979,11 +5979,11 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "171596-29-5",
   description: "Vidalista 80 works only if the patient is sexually stimulated.",
-  slug: "vidalista-80mg",
-  image: "/products/vidalista 80_1.webp",
+  slug: "vidalista-80mg-en",
+  image: "/products/vidalista80_1.webp",
  "additionalImages": [
-    "/products/vidalista 80_2.png",
-    "/products/vidalista 80_3.png",
+    "/products/vidalista80_1.webp",
+    "/products/vidalista80_1.webp",
   
   ],
   metaTitle:"Vidalista 80mg ED Pharma Wholesale Europe | Buy in Bulk ",
@@ -6168,7 +6168,7 @@ const products = {
   pack_size: "10 x 10 Tablets",
   cas_id: "171596-29-5",
   description: "This enhances the blood flow to the male penile organ resulting in a rigid erection for a longer time.",
-  slug: "vidalista-black-80mg",
+  slug: "vidalista-black-80mg-en",
   image: "/products/vidalista-black-80mg_1.png",//public\products\vidalista-black-80mg_1.png
  "additionalImages": [
     "/products/vidalista-black-80mg_2.png",
@@ -6360,7 +6360,7 @@ const products = {
     "dapoxetine": "119356-77-3"
   },
   description: "Only used to treat the physical problems associated with erectile dysfunction.",
-  slug: "super-vidalista-20-60",
+  slug: "super-vidalista-20-60-en",
   image: "/products/super-vidalista_1.png",//public\products\Super-Kamagra-Oral-Jelly 3.png
   "additionalImages": [
     "/products/super-vidalista_1.webp",
@@ -6550,7 +6550,7 @@ const products = {
   packing: "10x10 tablets",
   pack_size: "10x10",
   cas_id: "171596-29-5",
-  slug: "vidalista-ct-20mg",
+  slug: "vidalista-ct-20mg-en",
   image: "/products/vidalista20mg_1.webp",
   "additionalImages": [
     "/products/vadalista20mg_2.png",
@@ -6726,7 +6726,7 @@ const products = {
   packing: "10x10 tablets",
   pack_size: "10x10",
   cas_id: "171596-29-5",
-  slug: "vidalista-professional-20mg",
+  slug: "vidalista-professional-20mg-en",
   image: "/products/vidalista-professional-20-mg_1.webp",
   description: "Vidalista Professional Tablet is utilized to treat erectile brokenness in men. It increments blood stream to the penis to assist men with getting an erection.",
  "additionalImages": [
@@ -6916,7 +6916,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   pack_size: "10 x 10 Tablets",
   cas_id: "224785-91-5",
   description: "Vilitra 10 mg is a solid dosage form, which is utilized by men to cure erectile malfunction.",
-  slug: "vilitra-10mg",
+  slug: "vilitra-10mg-en",
   image: "/products/vilitra-10-mg-1.png",//public\products\vilitra-10-mg-1.png
   "additionalImages": [
     "/products/vilitra-10-mg-2.png",
@@ -7106,7 +7106,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   pack_size: "10 x 10 Tablets",
   cas_id: "224785-91-5",
   description: "Vilitra 20mg is the right medication to heal erection disorders. The prevalence of ED increases with age.",
-  slug: "vilitra-20mg",
+  slug: "vilitra-20mg-en",
   image: "/products/vilitra_20_2.webp",
  "additionalImages": [
     "/products/vilitra_20_2.webp",
@@ -7295,11 +7295,11 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   pack_size: "10 x 10 Tablets",
   cas_id: "224785-91-5",
   description: "Vilitra 40mg is a solid dosage form used by men to cure erectile malfunction.",
-  slug: "vilitra-40mg",
-  image: "/products/Vilitra 40.png",//public\products\Vilitra 40_2.png
+  slug: "vilitra-40mg-en",
+  image: "/products/Vilitra40.png",//public\products\Vilitra 40_2.png
    "additionalImages": [
-    "/products/Vilitra 40_2.png",
-    "/products/Vilitra 40_2.png",
+    "/products/Vilitra40.png",
+    "/products/Vilitra40.png",
   
   ],
   metaTitle:"Buy Vilitra 40mg ED Pharma Wholesale Europe | Bulk Vardenafil Tablets ",
@@ -7484,7 +7484,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   packing: "10x10 tablets",
   pack_size: "10x10",
   cas_id: "224785-91-5",
-  slug: "vilitra-60mg",
+  slug: "vilitra-60mg-en",
   image: "/products/Vilitra-60-Mg-2.webp",//public\products\Vilitra-60-Mg-2.webp
    "additionalImages": [
     "/products/Vilitra-60-Mg-2.webp",
@@ -7664,7 +7664,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
     "dapoxetine": "129938-20-1"
   },
   description: "Super Vilitra is a medicament that treats the inability to get or attain the desired erection for healthy sexual intercourse.",
-  slug: "super-vilitra",
+  slug: "super-vilitra-en",
   image: "/products/super_vilitra_1.webp",//
    "additionalImages": [
     "/products/super_vilitra_2.webp",
@@ -7854,7 +7854,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   packing: "1x4 tablets",
   pack_size: "1x4",
   cas_id: "167933-07-5",
-  slug: "fliban-100mg",
+  slug: "fliban-100-en",
   image: "/products/fliban_2.png",//public\products\fliban_2.png
    "additionalImages": [
     "/products/fliban_2.png",
@@ -8044,7 +8044,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   pack_size: "1x4 Tablets",
   cas_id: "330784-47-9",
   description: "Avanafil is used to treat erectile dysfunction (ED: impotence; inability to get or keep an erection in men).",
-  slug: "avana-50mg",
+  slug: "avana-50mg-en",
   image: "/products/Avana-50mg_1.png",//public\products\avanafil-avana-50mg-tablet_3.webp
   "additionalImages": [
     "/products/avanafil-avana-50mg_2.webp",
@@ -8233,7 +8233,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   packing: "1x4 Tablet",
   pack_size: "1x4",
   cas_id: "330784-47-9",
-  slug: "avana-100mg",
+  slug: "avana-100-en",
   image: "/products/Avana-100mg_1.jpg",//public\products\Avana-100mg_2.png
   "additionalImages": [
     "/products/Avana-100mg_2.png",
@@ -8414,7 +8414,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   packing: "1x4 Tablet",
   pack_size: "1x4",
   cas_id: "330784-47-9",
-  slug: "avana-200mg",
+  slug: "avana-200-en",
   image: "/products/avana-200-mg-1000x1000.webp",//public\products\Avana 200_1.png
   "additionalImages": [
     "/products/Avana 200_1.png",
@@ -8608,11 +8608,11 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
     "avanafil": "330784-47-9",
     "dapoxetine": "129938-20-1"
   },
-  slug: "top-avana",
-  image: "/products/Top avana_1.png",//public\products\TOP AVANA.png
+  slug: "top-avana-en",
+  image: "/products/Topavana_1.png",//public\products\TOP AVANA.png
    "additionalImages": [
-    "/products/Top avana_2.png",
-    "/products/TOP AVANA.png",
+    "/products/Topavana_1.png",
+    "/products/Topavana_1.png",
   
   ],
   metaTitle:"Buy Top Avana Tablets | Trusted ED Pharma Supplier ",
@@ -8803,7 +8803,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
     "avanafil": "330784-47-9",
     "dapoxetine": "129938-20-1"
   },
-  slug: "super-avana",
+  slug: "super-avana-en",
   image: "/products/Super-Avana_3.png",//public\products\Super-Avana_3.png
   "additionalImages": [
     "/products/super-avana_2.png",
@@ -9000,11 +9000,11 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
     "avanafil": "330784-47-9",
     "dapoxetine": "129938-20-1"
   },
-  slug: "extra-super-avana",
-  image: "/products/extra super avan _1.png",//public\products\extra super avan _1.png
+  slug: "extra-super-avana-en",
+  image: "/products/extra-super-avan_1.png",//public\products\extra super avan _1.png
   "additionalImages": [
-    "/products/extra super avan _1.png",
-    "/products/extra super avan _2.png",
+    "/products/extra-super-avan_1.png",
+    "/products/extra-super-avan_1.png",
   
   ],
   metaTitle:"Extra Super Avana Tablets | Buy with Confidence from ED Pharma ",
@@ -9192,7 +9192,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   packing: "10x10 Tablet",
   pack_size: "10x10",
   cas_id: "129938-20-1",
-  slug: "poxet-30mg",
+  slug: "poxet-30-en",
   image: "/products/poxet-30-mg-1_1.png",//public\products\poxet-30-mg-1_2.png
   "additionalImages": [
     "/products/poxet-30-mg-1_2.png",
@@ -9384,7 +9384,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   packing: "10x10 Tablet",
   pack_size: "10x10",
   cas_id: "129938-20-1",
-  slug: "poxet-60mg",
+  slug: "poxet-60-en",
   image: "/products/poxet-60_1.png",//public\products\poxet-60_1.png
   "additionalImages": [
     "/products/poxet-60_2.png",
@@ -9576,11 +9576,11 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   packing: "10x10 Tablet",
   pack_size: "10x10",
   cas_id: "129938-20-1",
-  slug: "poxet-90mg",
-  image: "/products/Poxet 90_2.png",//public\products\Poxet 90_2.png
+  slug: "poxet-90-en",
+  image: "/products/Poxet90_2.png",//public\products\Poxet 90_2.png
   "additionalImages": [
-    "/products/Poxet 90_2.png",
-    "/products/Poxet 90_1.png",
+    "/products/Poxet90_2.png",
+    "/products/Poxet90_1.png",
   
   ],
   metaTitle:"Buy Poxet 90 mg Online from ED Pharma | Trusted Source ",
@@ -9778,11 +9778,11 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   pack_size: "One Box Contains 10 X 10 Capsules",
   cas_id: "171599-83-0",
   description: "Sildenafil is used to treat male sexual function problems (impotence or erectile dysfunction-ED).",
-  slug: "p-force-100-caps",
-  image: "/products/P-force 100_1.png",//public\products\P-force 100_2.png
+  slug: "p-force-100-caps-en",
+  image: "/products/P-force100_1.png",//public\products\P-force 100_2.png
   "additionalImages": [
-    "/products/P-force 100_2.png",
-    "/products/P-force 100_3.png",
+    "/products/P-force100_2.png",
+    "/products/P-force100_3.png",
   
   ],
   metaTitle:"Buy P-Force 100 Caps ED Pharma Wholesale Europe | Bulk ED Solution ",
@@ -9978,11 +9978,11 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   pack_size: "One Box Contains 10 X 10 Tablet.",
   cas_id: "171599-83-0",
   description: "The salt present in the medicine, Sildenafil citrate is used for curing erectile dysfunction in males.",
-  slug: "p-force-fort",
-  image: "/products/p-force fort_1.png",//public\products\p-force fort_2.png
+  slug: "p-force-fort-en",
+  image: "/products/p-forcefort_1.png",//public\products\p-force fort_2.png
   "additionalImages": [
-    "/products/p-force fort_2.png",
-    "/products/p-force fort_3.png",
+    "/products/p-forcefort_2.png",
+    "/products/p-forcefort_3.png",
   
   ],
   metaTitle:"Buy P-Force Fort ED Pharma Wholesale Europe | Bulk Sildenafil Capsules ",
@@ -10178,7 +10178,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   pack_size: "One Box Contains 10 X 10 Tablet.",
   cas_id: "171599-83-0",
   description: "This powerful product is known for speedy activity instrument and dependable successful outcomes.",
-  slug: "p-force-plus",
+  slug: "p-force-plus-en",
   image: "/products/P-Force-Plus_1.png",//public\products\P-Force-Plus_1.png
   "additionalImages": [
     "/products/P-Force-Plus_2.png",
@@ -10377,7 +10377,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   pack_size: "One Box Contains 7 X 5gm Sachets.",
   cas_id: "171599-83-0 / 129938-20-1",
   description: "Super P-Force Oral Jelly (Viagra with Dapoxetine) is a well known product produced for the treatment of male impotence and premature ejaculation.",
-  slug: "super-p-force-oral-jelly",
+  slug: "super-p-force-oral-jelly-en",
   image: "/products/Super-P-Force-Oral-Jelly15_1.png",//public\products\Super-P-Force-Oral-Jelly15_2.png
   "additionalImages": [
     "/products/Super-P-Force-Oral-Jelly15_2.png",
@@ -10775,7 +10775,7 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
   pack_size: "One Box Contains 1 X 4 Tablet.",
   cas_id: "171599-83-0 / 129938-20-1",
   description: "Extra Super P Force interferes with the production of a hormone called PDE5.",
-  slug: "extra-super-p-force",
+  slug: "eextra-super-p-force-en",
   image: "/products/Extra-Super-P-Force_1.png",//public\products\Extra-Super-P-Force_1.png
   "additionalImages": [
     "/products/Extra-Super-P-Force_2.png",
@@ -10975,10 +10975,10 @@ metaTitle:"Vidalista Professional 20mg ED Pharma Exporter Europe | Wholesale Sup
     cas_id: "224785-90-4",
     description: "Vardenafil is used to treat erectile dysfunction (impotence; inability to get or keep an erection) in men.",
     slug: "zhewitra-10",
-    image: "/products/zhewitra 10_1.png",
+    image: "/products/zhewitra10_1.png",
     "additionalImages": [
-    "/products/zhewitra 10_2.png",
-    "/products/zhewitra 10_3.png",
+    "/products/zhewitra10_2.png",
+    "/products/zhewitra10_3.png",
   
   ],
   metaTitle:"Buy Zhewitra 10 Online | Vardenafil Tablets for ED",
@@ -11768,7 +11768,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "224785-90-4",
     description: "Zhewitra 60 mg is recommended for erectile dysfunction and impotency in males.",
-    slug: "zhewitra-60",
+    slug: "zhewitra-60-en",
     image: "/products/zhewitra-60.png",
    "additionalImages": [
     "/products/zhewitra60-2.png",
@@ -11967,7 +11967,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablets.",
     cas_id: "224785-90-4",
     description: "Zhewitra Soft 20mg is another nonexclusive Levitra with 20 mg Vardenafil as dynamic fixing.",
-    slug: "zhewitra-soft-20",
+    slug: "zhewitra-soft-20-en",
     image: "/products/Zhewitrasoft_2.png",//Zhewitrasoft_2.png
      "additionalImages": [
     "/products/Zhewitrasoft_2.png",
@@ -12164,7 +12164,7 @@ administration: [
     pack_size: "One Box Contains 1 X 4 Tablet.",
     cas_id: "224785-90-4 / 129938-20-1",
     description: "Super Zhewitra Tablets are composed of Vardenafil 20 mg and Dapoxetine 60 mg for instant results.",
-    slug: "super-zhewitra",
+    slug: "Super-Zhewitra-en",
     image: "/products/Super-Zhewitra16_1.png",//public\products\Super-Zhewitra16_1.png
     "additionalImages": [
     "/products/Super-Zhewitra16_2.png",
@@ -12363,7 +12363,7 @@ administration: [
     pack_size: "One Box Contains 1 X 4 Tablet.",
     cas_id: "224785-90-4 / 129938-20-1",
     description: "Extra Super Zhewitra is a blend of Vardenafil and Dapoxetine, used in the treatment of Premature discharge and erectile brokenness.",
-    slug: "extra-super-zhewitra",
+    slug: "Extra-Super-Zhewitra-en",
     image: "/products/Extra-Super-Zhewitra_1.png",//public\products\Extra-Super-Zhewitra_1.png
     "additionalImages": [
     "/products/Extra-Super-Zhewitra_2.png",
@@ -12561,7 +12561,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171596-29-5",
     description: "Tadalafil is also used to treat the symptoms of an enlarged prostate (benign prostatic hyperplasia-BPH).",
-    slug: "tadarise-2-5",
+    slug: "Tadarise-2.5-en",
     image: "/products/tablet-tadarise-2.5_1.png",//public\products\tablet-tadarise-2.5_3.png
      "additionalImages": [
     "/products/tablet-tadarise-2.5_2.png",
@@ -12760,7 +12760,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171596-29-5",
     description: "Tadarise tablets 5mg (generic Cialis) is used to treat erectile dysfunction impotence in men.",
-    slug: "tadarise-5",
+    slug: "Tadarise-5-en",
     image: "/products/tablet-tadarise-5_1.png",//public\products\tablet-tadarise-5_3.png
     "additionalImages": [
     "/products/tablet-tadarise-5_2.png",
@@ -12957,7 +12957,7 @@ administration: [
     pack_size: "One Box Contains 10X10 Tablets.",
     cas_id: "171596-29-5",
     description: "Tadalafil Works By Increasing Blood Flow To The Penis To Help A Man Get And Keep An Erection.",
-    slug: "tadarise-10",
+    slug: "Tadarise-10-en",
     image: "/products/tadarise10_1.png",//public\products\tadarise10_1.png
     "additionalImages": [
     "/products/tadarise10_2.png",
@@ -13157,11 +13157,11 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171596-29-5",
     description: "Tadarise tablets 20mg generic Cialis are used to treat erectile dysfunction impotence in men.",
-    slug: "tadarise-pro-20",
-    image: "/products/TADARISE PRO_20_1.png",
+    slug: "Tadarise-Pro-20-en",
+    image: "/products/TADARISEPRO_20_1.png",
     "additionalImages": [
-    "/products/TADARISE PRO_20_2.png",
-    "/products/TADARISE PRO_20_3.png",
+    "/products/TADARISEPRO_20_2.png",
+    "/products/TADARISEPRO_20_3.png",
   
   ],
   metaTitle:"Tadarise Pro 20 ED Pharma Bulk Europe | Trusted 20mg Tadalafil Supplier ",
@@ -13354,7 +13354,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171596-29-5",
     description: "Tadarise tablets 20mg generic Cialis are used to treat erectile dysfunction impotence in men.",
-    slug: "tadarise-20",
+    slug: "Tadarise-20-en",
     image: "/products/TADARISE20_1.png",
     "additionalImages": [
     "/products/TADARISE20_2.png",
@@ -13553,7 +13553,7 @@ administration: [
     pack_size: "One Box Contains 10 X 5 gm Sachets.",
     cas_id: "171596-29-5",
     description: "Zhewitra oral jelly comes in sachets and is a fast-acting medicine. Zhewitra Oral Jelly is for men who want a rock hard erection which lasts long.",
-    slug: "tadarise-20-oral-jelly",
+    slug: "Tadarise-20-Oral-Jelly-en",
     image: "/products/tadalafil-oral-jelly-20-mg-1000x1000.png",//public\products\tadalafil-oral-jelly-20-mg-1000x1000.png
     "additionalImages": [
     "/products/tadalafil-oral-jelly-20-mg-1000x1000.png",
@@ -13752,7 +13752,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171596-29-5",
     description: "Tadarise tablets 40mg (generic Cialis) is used to treat erectile dysfunction (impotence) in men.",
-    slug: "tadarise-40",
+    slug: "Tadarise-40-en",
     image: "/products/tadarise40_1.png",//public\products\tadarise40_1.png
     "additionalImages": [
     "/products/tadarise40_2.png",
@@ -13948,7 +13948,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171596-29-5",
     description: "Tadarise Pro 40 mg tablet is a drug for men who suffer from erectile dysfunction.",
-    slug: "tadarise-pro-40",
+    slug: "Tadarise Pro-40-en",
     image: "/products/tadarise-pro-40_1.png",//public\products\tadarise-pro-40_1.png
     "additionalImages": [
     "/products/tadarise-pro-40_2.png",
@@ -14146,7 +14146,7 @@ administration: [
     pack_size: "One Box Contains 10X10 Tablets.",
     cas_id: "171596-29-5",
     description: "Tadalafil is used to treat male sexual function problems (impotence or erectile dysfunction-ED).",
-    slug: "tadarise-60",
+    slug: "tadarise-60-en",
     image: "/products/tadarise-60-mg-back_1.png",//public\products\tadarise-60-mg-back_1.png
     "additionalImages": [
     "/products/tadarise-60-mg-back_2.png",
@@ -14343,7 +14343,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171596-29-5 / 129938-20-1",
     description: "Super tadarise Tablet is a medication used to treat Erectile dysfunction ED and Premature Ejaculation PE in Millions of Men's.",
-    slug: "super-tadarise",
+    slug: "Super-Tadarise-en",
     image: "/products/super_tadarise_tablet.png",//public\products\super_tadarise_tablet_1.png
      "additionalImages": [
     "/products/super_tadarise_tablet.png",
@@ -14542,7 +14542,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171596-29-5 / 129938-20-1",
     description: "Extra Super Tadarise Tablets are used for treating sexual disorders like erectile dysfunction and complains regarding premature ejaculation.",
-    slug: "extra-super-tadarise",
+    slug: "Extra-Super-Tadarise-en",
     image: "/products/extra_super_tadarise_tablet_1.png",
     "additionalImages": [
     "/products/extra_super_tadarise_tablet_2.png",
@@ -14740,7 +14740,7 @@ administration: [
     pack_size: "10x1x7 Tablets",
     cas_id: "171596-29-5",
     description: "Tadarise effervescent Tadalafil 20 Mg is used to treat erectile dysfunction (impotence) in men. Tadarise Effervescent tablets are the newest version of the Generic Tadalafil.",
-    slug: "tadarise-effervescent",
+    slug: "Tadarise-Effervescent-en",
     image: "/products/Tadarise-Effervescent_2.png",//public\products\Tadarise-Effervescent_2.png
     "additionalImages": [
     "/products/Tadarise-Effervescent_2.png",
@@ -14936,7 +14936,7 @@ administration: [
   pack_size: "10 Tablets",
   cas_id: "171596-29-5 / 129938-20-1",
   description: "Top Tadarise is a combination medicine used to treat the physical problems associated with erectile dysfunction and premature ejaculation in males.",
-  slug: "top-tadarise",
+  slug: "top-tadarise-en",
   image: "/products/top-tadarise12-sunrise_1.png",
     "additionalImages": [
     "/products/top-tadarise12-sunrise_2.png",
@@ -15123,7 +15123,7 @@ administration: [
   pack_size: "10 x 10 Tablets",
   cas_id: "171596-29-5",
   description: "Tadasoft 20 mg is a chewable form of Tadalafil with a natural fruit flavor, used to treat the physical problems associated with erectile dysfunction.",
-  slug: "tadasoft-20",
+  slug: "tadasoft-20-en",
   image: "/products/tadasoft-20-mg_1.png",//public\products\tadasoft-20-mg_3.png
   "additionalImages": [
     "/products/tadasoft-20-mg_2.png",
@@ -15310,7 +15310,7 @@ administration: [
   pack_size: "10 x 10 Tablets",
   cas_id: "171596-29-5",
   description: "Tadasoft 40 mg is a chewable form of Tadalafil with a natural fruit flavor, used to treat the physical problems associated with erectile dysfunction.",
-  slug: "tadasoft-40",
+  slug: "tadasoft-40-en",
   image: "/products/tadasoft-40-mg-2_1.png",//public\products\tadasoft-40-mg_2.png
   "additionalImages": [
     "/products/tadasoft-40-mg_3.png",
@@ -15498,7 +15498,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablets",
     cas_id: "171599-83-0",
     description: "Sildisoft 100 is brand of salt Sildenafil citrate in 100 mg quality. It is an impotency sedate used to treat erectile brokenness in men.",
-    slug: "sildisoft-100",
+    slug: "Sildisoft-100-en",
     image: "/products/sildisoft-sildenafil-100_1.png",
     "additionalImages": [
     "/products/sildisoft-sildenafil-100_2.png",
@@ -15695,7 +15695,7 @@ administration: [
   pack_size: "One Box Contains 10 X 10 Tablet.",
   cas_id: "171599-83-0",
   description: "It is an impotency sedate used to treat erectile brokenness in men.",
-  slug: "sildisoft-50",
+  slug: "Sildisoft-50-en",
   image: "/products/sildisoft-sildenafil-50_1.png",
   "additionalImages": [
     "/products/sildisoft-sildenafil-50_1.png",
@@ -15896,7 +15896,7 @@ administration: [
     pack_size: "10x10 Tablets",
     cas_id: "171599-83-0",
     description: "Malegra 25 Mg is the pill utilized for Erectile Dysfunction in men. ED is the state of poor sexual fulfillment because of inadequate erection.",
-    slug: "malegra-25",
+    slug: "Malegra-25-en",
     image: "/products/malegra_25_mg_1.png",
     "additionalImages": [
     "/products/malegra_25_mg_2.webp",
@@ -16091,7 +16091,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171599-83-0",
     description: "Sildenafil Citrate 50mg Tablet is a prescription medication used to treat erectile dysfunction (impotence) in men.",
-    slug: "malegra-50",
+    slug: "Malegra-50-en",
     image: "/products/Malegra-50-Mg_2.webp",//public\products\malegra_50_mg_1.webp
     "additionalImages": [
     "/products/malegra_50_mg_1.webp",
@@ -16289,11 +16289,11 @@ administration: [
     pack_size: "10x10 Tablets",
     cas_id: "171599-83-0",
     description: "Malegra 75 mg tablet is a physician endorsed medication used to treat erectile Dysfunction. It works by expanding blood stream to the penis.",
-    slug: "malegra-75",
-    image: "/products/malegra-sildenafil-tablets 75_2.png",//public\products\malegra-sildenafil-tablets 75_1.png
+    slug: "Malegra-75-en",
+    image: "/products/malegra-sildenafil-tablets75_2.png",//public\products\malegra-sildenafil-tablets 75_1.png
     "additionalImages": [
-    "/products/malegra-sildenafil-tablets 75_2.png",
-    "/products/malegra-sildenafil-tablets 75_3.png",
+    "/products/malegra-sildenafil-tablets75_2.png",
+    "/products/malegra-sildenafil-tablets75_2.png",
   
   ],
   metaTitle:"Malegra 75 ED Pharma Exporter Europe | Wholesale ED Tablet Supply ",
@@ -16683,7 +16683,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171599-83-0",
     description: "Sildenafil works by increasing blood flow to the penis to help a man get and keep an erection.",
-    slug: "malegra-120",
+    slug: "Malegra-120-en",
     image: "/products/malegra-120mg_1.png",//public\products\malegra-120mg_2.png
     "additionalImages": [
     "/products/malegra-120mg_2.png",
@@ -16879,7 +16879,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171599-83-0",
     description: "Malegra 200 mg tablet is a potential and long-lasting medical formula to deal with erectile failures in men.",
-    slug: "malegra-200",
+    slug: "Malegra-200-en",
     image: "/products/malegra-200_1.png",//public\products\malegra-200_2.png
     "additionalImages": [
     "/products/malegra-200_2.png",
@@ -17078,7 +17078,7 @@ administration: [
     pack_size: "One Box Contains 7 X 5gm Sachets.",
     cas_id: "171599-83-0",
     description: "It contains Sildenafil Oral Jelly 100mg to enhance your sexual life and treat erectile dysfunction.",
-    slug: "malegra-100-oral-jelly",
+    slug: "malegra-100-oral-jelly-en",
     image: "/products/malegra_oral_jelly_1.webp",//public\products\malegra_oral_jelly_1.webp
     "additionalImages": [
     "/products/malegra_oral_jelly_1.webp",
@@ -17277,11 +17277,11 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171599-83-0",
     description: "MALEGRA PRO restrains the PDE-5 receptors and causes men to accomplish solid and continued erection.",
-    slug: "malegra-pro-50",
-    image: "/products/Malegra pro 50_1.png",///public\products\Malegra pro 50_1.png
+    slug: "Malegra-Pro-50-en",
+    image: "/products/Malegrapro50_1.png",///public\products\Malegra pro 50_1.png
     "additionalImages": [
-    "/products/Malegra pro 50_3.png",
-    "/products/Malegra pro 50_3.png",
+    "/products/Malegrapro50_1.png",
+    "/products/Malegrapro50_1.png",
   ],
   metaTitle:"Buy Malegra Pro 50 ED Pharma Wholesale Europe | Bulk Sildenafil 50mg ",
   metaDescription:"Buy Malegra Pro 50 by ED Pharma wholesale in Europe. Premium sildenafil 50mg performance tablets with enhanced formulation, competitive bulk pricing, dependable stock & fast EU delivery for B2B buyers. ",
@@ -17474,11 +17474,11 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171599-83-0",
     description: "MALEGRA PRO restrains the PDE-5 receptors and causes men to accomplish solid and continued erection.",
-    slug: "malegra-pro-100",
-    image: "/products/malegra pro 100_1.png",//public\products\malegra pro 100_1.png
+    slug: "Malegra-Pro-100-en",
+    image: "/products/malegrapro100_1.png",//public\products\malegra pro 100_1.png
     "additionalImages": [
-    "/products/malegra pro 100_2.png",
-    "/products/malegra pro 100_3.png",
+    "/products/malegrapro100_2.png",
+    "/products/malegrapro100_3.png",
   ],
   metaTitle:"Malegra Pro 100 ED Pharma Exporter Europe | Bulk ED Tablet Supply ",
   metaDescription:"Top exporter of Malegra Pro 100 by ED Pharma in Europe. Bulk sildenafil 100mg tablets with pharma‑grade quality, consistent stock and fast EU logistics — ideal for trade partners.",
@@ -17671,7 +17671,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171599-83-0 / 116539-59-4",
     description: "It is a prescription drug used to cure ED (erectile dysfunction).",
-    slug: "malegra-dxt",
+    slug: "Malegra-dxt-en",
     image: "/products/malegra-dxt-plus-Photoroom.png",//public\products\malegra-dxt-plus-Photoroom.png
         "additionalImages": [
     "/products/malegra-dxt-plus-Photoroom.png",
@@ -17867,11 +17867,11 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablets",
     cas_id: "171599-83-0 / 116539-59-4",
     description: "Malegra dxt is an oral medication that treats erectile dysfunction as well as premature ejaculation in men.",
-    slug: "malegra-dxt-plus",
-    image: "/products/malegra_dxt_plus_2_ (1).png",//public\products\malegra-dxt-plus.png
+    slug: "Malegra-DXT-Plus-en",
+    image: "/products/malegra_dxt_plus_2_1.png",
     "additionalImages": [
-    "/products/malegra_dxt_plus_2_ (1).png",//public\products\malegra_dxt_plus_2_ (1).png
-    "/products/malegra-dxt-plus-Photoroom.png",
+    "/products/malegra_dxt_plus_2_1.png",//public\products\malegra_dxt_plus_2_ (1).png
+    "/products/malegra_dxt_plus_2_1.png",
   ],
   metaTitle:"Malegra DXT Plus ED Pharma Wholesale Europe | Buy in Bulk ",
   metaDescription:"Buy Malegra DXT Plus tablets by ED Pharma wholesale in Europe. Premium dual action ED & PE tablets for B2B buyers with competitive bulk pricing and reliable EU logistics. ",
@@ -18067,7 +18067,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablet.",
     cas_id: "171599-83-0 / 54910-89-3",
     description: "Malegra FXT is the new age treatment for sexual dysfunction in males.",
-    slug: "malegra-fxt",
+    slug: "Malegra-FXT-en",
     image: "/products/Malegra-FXT3_0.png",//public\products\Malegra-FXT3_1.png
     "additionalImages": [
     "/products/Malegra-FXT3_2.png",//public\products\Malegra-FXT3_2.png
@@ -18264,7 +18264,7 @@ administration: [
     pack_size: "10x1x7 Tablets",
     cas_id: "171599-83-0 / 54910-89-3",
     description: "Malegra FXT Plus is prescribed for Erectile Dysfunction (ED) and Premature Ejaculation (PE).",
-    slug: "malegra-fxt-plus",
+    slug: "Malegra-FXT-Plus",
     image: "/products/malegra-fxt-plus-1000x1000.png",//public\products\malegra-fxt-plus-1000x1000.png
     "additionalImages": [
     "/products/malegra-fxt-plus-1000x1000.png",
@@ -18462,7 +18462,7 @@ administration: [
     pack_size: "10x1x7 Tablets",
     cas_id: "171599-83-0",
     description: "Malegra Sildenafil Effervescent Tablets are a successful and widely accepted treatment for Erectile dysfunction (ED).",
-    slug: "malegra-effervescent-100",
+    slug: "Malegra-Effervescent100mg-en",
     image: "/products/Malegra-100_1.png",//public\products\Malegra-100_2.png
     "additionalImages": [
     "/products/Malegra-100_2.png",
@@ -18661,11 +18661,11 @@ administration: [
     pack_size: "10x1x7 Tablets",
     cas_id: "171599-83-0",
     description: "Malegra 100 Green Tablet is a PDE-5 inhibitor. It works by increasing blood flow to the penis.",
-    slug: "malegra-100-green",
-    image: "/products/Malegra-100 Green_2.png",
+    slug: "Malegra100-Green-en",
+    image: "/products/Malegra-100Green_3.png",
      "additionalImages": [
-    "/products/Malegra-100 Green_3.png",
-    "/products/Malegra-100 Green_1.png",
+    "/products/Malegra-100Green_3.png",
+    "/products/Malegra-100Green_3.png",
   ],
   metaTitle:"Malegra 100 Green ED Pharma Wholesale Europe | Premium Green Sildenafil 100mg ",
   metaDescription:"Buy Malegra 100 Green tablets by ED Pharma wholesale in Europe. High-quality green sildenafil 100mg formula for B2B buyers, distributors & importers with competitive bulk pricing & reliable EU shipping. ",
@@ -18860,7 +18860,7 @@ administration: [
     pack_size: "1x5 Tablets",
     cas_id: "171599-83-0",
     description: "Malegra Gold 100 Tablet is used to treat erectile dysfunction in men.",
-    slug: "malegra-100",
+    slug: "malegra-100-en",
     image: "/products/malegra-gold_1.png",//public\products\malegra-gold_1.png
     "additionalImages": [
     "/products/malegra-gold_2.png",
@@ -19057,7 +19057,7 @@ warnings: [
   pack_size: "One Box Contains 100 g",
   cas_id: "N/A",
   description: "Penon Cream for men is a herbal massage cream to enhance the length of men's private organ.",
-  slug: "penon-cream",
+  slug: "Penon-Cream-en",
   image: "/products/penon-cream-for-man-packaging-size-100-gm-1000x1000.png",
   "additionalImages": [
     "/products/penon-cream_2.png",
@@ -19222,7 +19222,7 @@ administration: [
     pack_size: "One Box Contains 100 gm",
     cas_id: "N/A",
     description: "Naron Cream is an all-natural product, fragrance-free, without hormones and chemicals.",
-    slug: "naron-cream",
+    slug: "Naron-Cream-en",
     image: "/products/naron-cream_1.png",//public\products\naron-cream_1.png
     "additionalImages": [
     "/products/naron-cream_2.png",
@@ -19373,11 +19373,11 @@ administration: [
     pack_size: "One Box Contains 100 gm",
     cas_id: "N/A",
     description: "Grafix cream is a non-surgical breast enlargement cream to achieve size and shape of breasts.",
-    slug: "grafix-cream",
-    image: "/products/Grafix cream_1.png",//public\products\Grafix cream_2.png
+    slug: "Grafix-Cream-en",
+    image: "/products/Grafixcream_1.png",//public\products\Grafix cream_2.png
     "additionalImages": [
-    "/products/Grafix cream_2.png",
-    "/products/Grafix cream_3.png",
+    "/products/Grafixcream_1.png",
+    "//products/Grafixcream_1.png",
   
   ],
   metaTitle:"Buy Grafix Cream ED Pharma Wholesale Europe | Bulk Enhancement Cream ",
@@ -19525,7 +19525,7 @@ administration: [
     pack_size: "One Box Contains 10 X 4 Tablets.",
     cas_id: "171599-83-0",
     description: "This drug is made for women to feel a sexual urge and boosts sexual recall.",
-    slug: "femallegra-100",
+    slug: "Femallegra-100-en",
     image: "/products/sildenafil-femalegra_1.png",
     "additionalImages": [
     "/products/sildenafil-femalegra_2.png",
@@ -19673,11 +19673,11 @@ administration: [
     pack_size: "One Box Contains 1 X 4 Tablets.",
     cas_id: "171596-29-5",
     description: "Tadalafil helps relax smooth muscles in blood vessel walls and increases blood flow.",
-    slug: "tadafem-20",
-    image: "/products/Tadafem 20_1.png",//public\products\Tadafem 20_2.png
+    slug: "Tadafem-20-en",
+    image: "/products/Tadafem20_2.png",//public\products\Tadafem 20_2.png
     "additionalImages": [
-    "/products/Tadafem 20_2.png",
-    "/products/Tadafem 20_3.png",
+    "/products/Tadafem20_2.png",
+    "/products/Tadafem20_2.png",
   
   ],
   metaTitle:"Buy Tadafem 20 ED Pharma Wholesale Europe | Bulk Female Tadalafil Tabs ",
@@ -19828,7 +19828,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablets.",
     cas_id: "50-41-9",
     description: "Powerful medication for women with PCOS, amenorrhea-galactorrhoea disorder.",
-    slug: "clofi-25",
+    slug: "clofi-25-en",
     image: "/products/Clofi25.png",//public\products\Clofi25.png
     "additionalImages": [
     "/products/clofi-25_2.png",
@@ -19969,7 +19969,7 @@ administration: [
     pack_size: "One Box Contains 10 X 10 Tablets.",
     cas_id: "50-41-9",
     description: "Powerful medication for women with PCOS and related conditions.",
-    slug: "clofi-50",
+    slug: "Clofi-50-en",
     image: "/products/Clofi50__1.png",//public\products\Clofi50__1.png
     "additionalImages": [
     "/products/Clofi50_3.png",
@@ -20111,11 +20111,11 @@ administration: [
   pack_size: "One Box Contains 10 X 10 Tablets.",
   cas_id: "50-41-9",
   description: "This medication is no doubt powerful in ladies with Polycystic Ovary Syndrome (PCOS), amenorrhea-galactorrhoea disorder.",
-  slug: "clofi-100",
-  image: "/products/Clofi 100.png",
+  slug: "Clofi-100-en",
+  image: "/products/Clofi100.png",
   "additionalImages": [
-    "/products/Clofi 100.png",
-    "/products/Clofi 100.png",
+    "/products/Clofi100.png",
+    "/products/Clofi100.png",
   
   ],
   metaTitle:"Buy Clofi-100 (Clomiphene Citrate 100 mg) Online in Europe | ED Pharma ",
@@ -20253,7 +20253,7 @@ administration: [
     pack_size: "One Box Contains 1 x 4 Tablet",
     cas_id: "268203-93-6",
     description: "Zudena 100 contains Udenafil 100 mg that helps treat erectile dysfunction in men by increasing blood flow to the penis by relaxing muscles in penile blood vessels.",
-    slug: "zudena-100",
+    slug: "Zudena-100-en",
     image: "/products/Zudena-100_3.png",
     "additionalImages": [
     "/products/zudena-100-mg-tablet-1000x1000.png",
@@ -20405,7 +20405,7 @@ administration: [
     pack_size: "One Box Contains 1 x 4 Tablet",
     cas_id: "268203-93-6",
     description: "Zudena is a revolutionary product for the treatment of erectile dysfunction. Zudena 200 mg is not generic and contains a completely new active ingredient Udenafil.",
-    slug: "zudena-200",
+    slug: "Zudena-200-en",
     image: "/products/Zudena-200.png",
    "additionalImages": [
     "/products/Zudena-200.png",
@@ -20557,7 +20557,7 @@ administration: [
     pack_size: "5 Tablets",
     cas_id: "268203-93-6",
     description: "Super Zudena Udenafil and Dapoxetine Hydrochloride is a revolutionary product for the treatment of erectile dysfunction and premature ejaculation.",
-    slug: "super-zudena",
+    slug: "super-zudena-en",
     image: "/products/Super-Zudena.png",//public\products\Super-Zudena_3.png
     "additionalImages": [
     "/products/Super-Zudena_3.png",
@@ -20711,7 +20711,7 @@ administration: [
     pack_size: "10 x 10 Tablets",
     cas_id: "70288-86-7",
     description: "Iversun 6 Tablet is used to treat parasitic infections of the intestinal tract, skin, and eyes.",
-    slug: "iversun-6",
+    slug: "Iversun-6-en",
     image: "/products/iversun-6mg_1.png",//public\products\iversun-6mg_1.png
     "additionalImages": [
     "/products/iversun-6mg_2.png",
@@ -20849,7 +20849,7 @@ administration: [
     pack_size: "10 x 10 Tablets",
     cas_id: "70288-86-7",
     description: "Iversun 12mg is used to treat parasitic infections of the intestinal tract, skin, and eyes.",
-    slug: "iversun-12",
+    slug: "Iversun-12-en",
     image: "/products/iversun-12mg_2.png",//public\products\Iversun-6mg_3.png
     "additionalImages": [
      "/products/iversun-12mg_2.png",
@@ -20988,7 +20988,7 @@ administration: [
     pack_size: "1 x 10 Tablets",
     cas_id: "226256-56-0",
     description: "Cinacalcet is a prescription medication used to treat high calcium levels in the body.",
-    slug: "cinasun-30",
+    slug: "Cinasun-30-en",
     image: "/products/cinasun-30mg-tablets-1000x1000.png",//public\products\cinasun-30-3.png
     "additionalImages": [
     "/products/cinasun-30-3.png",
@@ -21128,7 +21128,7 @@ administration: [
     pack_size: "1 x 10 Tablets",
     cas_id: "226256-56-0",
     description: "Cinacalcet is a prescription medication used to treat high calcium levels in the body.",
-    slug: "cinasun-60",
+    slug: "Cinasun-60-en",
     image: "/products/cinasun-60mg-1.png",//public\products\cinasun-60mg-1-1000x1000.png
     "additionalImages": [
     "/products/cinasun-60mg-2.png",
@@ -21269,7 +21269,7 @@ administration: [
     pack_size: "1 x 10 Tablets",
     cas_id: "226256-56-0",
     description: "Cinacalcet is a prescription medication used to treat high calcium levels in the body.",
-    slug: "cinasun-90",
+    slug: "Cinasun-90-en",
     image: "/products/cinasun-90mg_1.png",//public\products\cinasun-90mg_2.png
     "additionalImages": [
     "/products/cinasun-90mg_2.png",
@@ -21410,7 +21410,7 @@ administration: [
     pack_size: "1 x 5 Tablets",
     cas_id: "171596-29-5",
     description: "Chocolis 20 is a chocolate-flavoured tadalafil tablet that relaxes blood vessels to improve blood flow.",
-    slug: "chocolis-20",
+    slug: "Chocolis-20-en",
     image: "/products/chocolis-chewable-tadalafil-20mg-1000x1000.png",
     "additionalImages": [
     "/products/chocolis-chewable-tadalafil-20mg-1000x1000 (1).png",
@@ -21566,8 +21566,8 @@ administration: [
     pack_size: "1 x 5 Tablets",
     cas_id: "171599-83-0",
     description: "Chocogra 100 Chewable contains Sildenafil Citrate used for erectile dysfunction and pulmonary hypertension.",
-    slug: "chocogra-100",
-    image: "/products/Chocogra 100.png",
+    slug: "Chocogra-100-en",
+    image: "/products/Chocogra100.png",
     "additionalImages": [
     "/products/chocogra-100-mg-tablet-1729580911-7650550.png",
     "/products/chocogra-100-sildenafil-tablets-1000x1000.png",
@@ -21719,7 +21719,7 @@ administration: [
     pack_size: "4 x 21 Capsules",
     cas_id: "96829-58-2",
     description: "Orlistat is used with a low-calorie, low-fat diet and exercise program to help people lose weight.",
-    slug: "orlisun-120",
+    slug: "Orlisun-en",
     image: "/products/Orlisun-Orlistat.png",//public\products\Orlisun-Orlistat-Capsules-USP.png
     "additionalImages": [
     "/products/Orlisun-Orlistat.png",
@@ -21859,7 +21859,7 @@ administration: [
     pack_size: "10 x 10 Tablets",
     cas_id: "68693-11-8",
     description: "Modafresh 200 Tablet promotes wakefulness in patients with excessive daytime sleepiness or narcolepsy.",
-    slug: "modafresh-200",
+    slug: "Modafresh-200-en",
     image: "/products/modafresh1.png",//public\products\200-mg-Modafresh-Tablet. (1).png
     "additionalImages": [
     "/products/200-mg-Modafresh-Tablet. (1).png",//public\products\modafresh.png

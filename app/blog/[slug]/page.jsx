@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumb';
+import Image from "next/image";
 import { 
   Calendar, 
   Clock, 
@@ -121,8 +122,20 @@ export default function BlogPostPage() {
               </div>
             </div>
 
-            {/* Featured Image */}
-            <div className="h-56 md:h-64 bg-gradient-to-br from-gray-100 to-gray-200" />
+           {/* Featured Image */}
+<div className="relative h-56 md:h-64 w-full overflow-hidden">
+  <Image
+    src={post.image}
+    alt={post.title}
+    fill
+    className="object-cover"
+    sizes="(max-width: 768px) 100vw, 768px"
+    priority
+  />
+
+  {/* Optional gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+</div>
 
             {/* Content */}
             <div className="p-6">

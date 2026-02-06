@@ -104,10 +104,10 @@ export default function Hero() {
             </div>
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-gradient-to-r from-[#8B0035]/20 to-[#F4C430]/20 flex items-center justify-center">
-                <span className="text-2xl font-bold text-[#8B0035]">4.8★</span>
+                <span className="text-2xl font-bold text-[#8B0035]">4.8</span>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">Rating</p>
+                <p className="font-semibold text-gray-900">★ Rating</p>
                 <p className="text-sm text-gray-600">Industry Leader</p>
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function Hero() {
 <div className="relative">
   <div className="w-full h-[480px] rounded-3xl overflow-hidden shadow-2xl group">
     <img
-      src="/herobg.jpg"
+      src="/herobg1.jpg"
       alt="Advanced Pharmaceutical Manufacturing"
       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
     />

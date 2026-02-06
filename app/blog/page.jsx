@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumb';
 import { Search, Calendar, Clock, Tag, ArrowRight } from 'lucide-react';
-import BlogCard from '@/components/BlogCard';
+import Image from "next/image";
 
 // Blog data
 const blogPosts = [

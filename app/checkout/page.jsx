@@ -51,10 +51,14 @@ export default function CheckoutPage() {
   const [saveAddress, setSaveAddress] = useState(true);
 
   // Calculate totals
-  const subtotal = cartItems.reduce(
-    (sum, item) => sum + Number(item.price.replace('$', '')) * item.qty,
-    0
-  );
+const getPrice = (price) =>
+  typeof price === 'string' ? Number(price.replace('$', '')) : Number(price);
+
+const subtotal = cartItems.reduce(
+  (sum, item) => sum + getPrice(item.price) * item.qty,
+  0
+);
+
   const shipping = subtotal > 50 ? 0 : 5.99;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
@@ -296,10 +300,12 @@ export default function CheckoutPage() {
                       </div>
                       <div className="text-right">
                         <div className="font-bold text-[#8B0035]">
-                          ${Number(item.price.replace('$', '')) * item.qty}
+                       ${(getPrice(item.price) * item.qty).toFixed(2)}
+
                         </div>
                         <div className="text-sm text-gray-500">
-                          ${item.price} each
+                         ${getPrice(item.price).toFixed(2)} each
+
                         </div>
                       </div>
                     </div>

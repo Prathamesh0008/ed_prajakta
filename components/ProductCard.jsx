@@ -1,12 +1,25 @@
+
+
 //edpharma-webshop\components\ProductCard.jsx (updated)
 'use client';
 import { Star, ShoppingCart, Eye, Heart } from "lucide-react";
 import { useState } from "react";
 import { useCart } from '@/app/context/CartContext';
 import Link from 'next/link';
+import { useWishlist } from '@/app/context/WishlistContext';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/app/context/AuthContext';
+
+
 
 export default function ProductCard({ product }) {
-  const [isLiked, setIsLiked] = useState(false);
+  const router = useRouter();
+const { isAuthenticated } = useAuth();
+
+const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+
+const liked = isInWishlist(product.id);
+
   const [isHovered, setIsHovered] = useState(false);
   const { addToCart , user } = useCart();
 
@@ -66,14 +79,30 @@ export default function ProductCard({ product }) {
         
         {/* Action Buttons */}
         <div className={`absolute top-4 right-4 flex flex-col gap-2 transition-all duration-300 ${isHovered ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
-          <button 
-            onClick={() => setIsLiked(!isLiked)}
-            className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
-          >
-            <Heart 
-              className={`w-5 h-5 ${isLiked ? 'fill-[#8B0035] text-[#8B0035]' : 'text-gray-600'}`} 
-            />
-          </button>
+         <button
+  onClick={(e) => {
+    e.stopPropagation();
+
+    if (!isAuthenticated) {
+      router.push(`/auth/signin?redirect=/products/${product.id}`);
+      return;
+    }
+
+    liked
+      ? removeFromWishlist(product.id)
+      : addToWishlist(product);
+  }}
+  className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:shadow-lg transition-shadow"
+>
+  <Heart
+    className={`w-5 h-5 transition-colors ${
+      liked
+        ? 'fill-[#8B0035] text-[#8B0035]'
+        : 'text-gray-600 hover:text-[#8B0035]'
+    }`}
+  />
+</button>
+
         <Link href={`/products/${product.id}`}>
 
             <button className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:shadow-lg transition-shadow">
@@ -85,7 +114,14 @@ export default function ProductCard({ product }) {
         {/* Quick Add to Cart */}
         <div className={`absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
           <button
-            onClick={() => addToCart(product)}
+           onClick={() => {
+  if (!isAuthenticated) {
+    router.push(`/auth/signin?redirect=/products/${product.id}`);
+    return;
+  }
+  addToCart(product);
+}}
+
             className="w-full py-3 rounded-lg bg-gradient-to-r from-[#8B0035] to-[#6b0028] text-white font-semibold flex items-center justify-center gap-2"
           >
             <ShoppingCart className="w-5 h-5" />

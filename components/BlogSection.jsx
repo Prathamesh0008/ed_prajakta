@@ -2,6 +2,8 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { getAllBlogPosts } from "@/app/data/blogData";
+import Image from "next/image";
+
 
 export default function BlogSection() {
   const colors = {
@@ -60,10 +62,19 @@ export default function BlogSection() {
                 </span>
               </div>
 
-              {/* Image */}
-              <div className="h-48 overflow-hidden px-8">
-                <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg" />
-              </div>
+             {/* Image */}
+<div className="h-48 overflow-hidden px-8">
+  <div className="relative w-full h-full rounded-lg overflow-hidden">
+    <Image
+      src={post.image}
+      alt={post.title}
+      fill
+      className="object-cover transition-transform duration-500 hover:scale-105"
+      sizes="(max-width: 768px) 100vw, 33vw"
+      priority={false}
+    />
+  </div>
+</div>
 
               {/* Content */}
               <div className="p-8">
@@ -98,6 +109,12 @@ export default function BlogSection() {
     </section>
   );
 }
+
+
+
+
+
+
 
 
 
