@@ -162,7 +162,7 @@ const liked = isInWishlist(product.id);
         {/* Price & Rating */}
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-2xl font-bold text-[#8B0035]">{product.price}</div>
+            <div className="text-2xl font-bold text-[#8B0035]">${Number(product.price || 0).toFixed(2)}</div>
             <div className="flex items-center gap-1 mt-1">
               {[...Array(5)].map((_, i) => (
                 <Star

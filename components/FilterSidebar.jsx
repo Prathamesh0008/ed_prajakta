@@ -12,7 +12,7 @@ export default function FilterSidebar({
   isMobileOpen = false,
   onClose = () => {}
 }) {
-  const [priceRange, setPriceRange] = useState([0, 100]);
+  const [priceRange, setPriceRange] = useState([0, 1000]);
 
   const toggleFilter = (type, value) => {
     setFilters(prev => ({
@@ -38,7 +38,7 @@ export default function FilterSidebar({
     setFilters({
       manufacturers: [],
       compounds: [],
-      price: 100
+      price: 1000
     });
     setPriceRange([0, 100]);
   };
@@ -122,7 +122,7 @@ export default function FilterSidebar({
                     Max: ${filters.price}
                     <button
                       onClick={() => {
-                        setFilters(prev => ({ ...prev, price: 100 }));
+                        setFilters(prev => ({ ...prev, price: 1000 }));
                         setPriceRange([0, 100]);
                       }}
                       className="hover:text-gray-900"
@@ -185,7 +185,7 @@ export default function FilterSidebar({
             <input
               type="range"
               min="0"
-              max="100"
+              max="1000"
               value={priceRange[1]}
               onChange={(e) => {
                 const val = Number(e.target.value);
@@ -196,7 +196,7 @@ export default function FilterSidebar({
             />
             <div className="flex justify-between text-sm text-gray-500 mt-2">
               <span>$0</span>
-              <span>$100</span>
+              <span>$1000</span>
             </div>
           </div>
 

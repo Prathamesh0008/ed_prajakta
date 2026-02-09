@@ -22,10 +22,11 @@ export default function CartPage() {
   const { cartItems, removeFromCart, updateQty, clearCart } = useCart();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
 
-  const subtotal = cartItems.reduce(
-    (sum, item) => sum + Number(item.price.replace('$', '')) * item.qty,
-    0
-  );
+ const subtotal = cartItems.reduce(
+  (sum, item) => sum + Number(item.price) * item.qty,
+  0
+);
+
   const shipping = subtotal > 50 ? 0 : 5.99;
   const tax = subtotal * 0.08;
   const total = subtotal + shipping + tax;
@@ -173,12 +174,14 @@ export default function CartPage() {
 
                               {/* Price */}
                               <div className="text-right">
-                                <div className="text-lg font-bold text-[#8B0035]">
-                                  ${Number(item.price.replace('$', '')) * item.qty}
-                                </div>
-                                <div className="text-sm text-gray-500">
-                                  ${item.price} each
-                                </div>
+<div className="text-lg font-bold text-[#8B0035]">
+  ${(Number(item.price) * item.qty).toFixed(2)}
+</div>
+<div className="text-sm text-gray-500">
+  ${Number(item.price).toFixed(2)} each
+</div>
+
+
                               </div>
                             </div>
                           </div>

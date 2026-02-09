@@ -33,7 +33,7 @@ export default function ProductsPage() {
   const [filters, setFilters] = useState({
     manufacturers: [],
     compounds: [],
-    price: 100
+    price: 1000
   });
 
   // Mobile filter state
@@ -252,7 +252,7 @@ export default function ProductsPage() {
                       product={{
                         id: product.slug,
                         name: product.name,
-                        price: `$${product.price.toFixed(2)}`,
+                        price: product.price,
                         rating: product.rating,
                         image: product.image,
                         description: `${product.manufacturer} • ${product.dosage}`,
