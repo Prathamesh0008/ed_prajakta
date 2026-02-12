@@ -1,3 +1,4 @@
+//app\checkout\page.jsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -171,8 +172,32 @@ const subtotal = cartItems.reduce(
       estimatedDelivery: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString()
     };
 
-    // Store order data in localStorage
-    localStorage.setItem('lastOrder', JSON.stringify(orderData));
+   // Store last order
+localStorage.setItem('lastOrder', JSON.stringify(orderData));
+
+// Save to user order history
+const existingOrders = JSON.parse(localStorage.getItem('userOrders')) || [];
+
+const newOrder = {
+  ...orderData,
+  id: orderData.orderId,
+  status: 'processing',
+  createdAt: new Date().toISOString(),
+  itemsDetails: cartItems.map(item => ({
+    id: item.id,
+    name: item.name,
+    price: item.price,
+    quantity: item.qty,
+    image: item.image
+  })),
+  shippingAddress: { ...address }
+};
+
+localStorage.setItem(
+  'userOrders',
+  JSON.stringify([...existingOrders, newOrder])
+);
+
     
     // Simulate order processing
     setTimeout(() => {
@@ -274,7 +299,8 @@ const subtotal = cartItems.reduce(
             {/* Left Column - Order Details & Address */}
             <div className="lg:col-span-2 space-y-8">
               {/* Order Summary Card */}
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+          <div className="bg-white text-gray-900 rounded-2xl shadow-lg border border-gray-200 p-6">
+
                 <div className="flex items-center gap-2 mb-6">
                   <Package className="w-5 h-5 text-[#8B0035]" />
                   <h2 className="text-xl font-bold text-gray-900">
@@ -666,11 +692,11 @@ const subtotal = cartItems.reduce(
                   <div className="space-y-3 mb-6">
                     <div className="flex justify-between">
                       <span className="text-gray-600">Subtotal</span>
-                      <span className="font-medium">${subtotal.toFixed(2)}</span>
+                      <span className="font-medium text-gray-900">${subtotal.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Shipping</span>
-                      <span className="font-medium">
+                      <span className="font-medium text-gray-900">
                         {shipping === 0 ? (
                           <span className="text-green-600">Free</span>
                         ) : (
@@ -680,7 +706,7 @@ const subtotal = cartItems.reduce(
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-600">Tax</span>
-                      <span className="font-medium">${tax.toFixed(2)}</span>
+                      <span className="font-medium text-gray-900">${tax.toFixed(2)}</span>
                     </div>
                     <div className="border-t border-gray-200 pt-3">
                       <div className="flex justify-between">

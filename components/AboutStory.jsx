@@ -1,11 +1,13 @@
+//components\AboutStory.jsx
 export default function AboutStory() {
   return (
     <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+
           {/* Left Column - Title */}
           <div>
-            <div className="sticky top-8">
+            <div className="lg:sticky lg:top-24">
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
                 About <br />
                 <span className="bg-gradient-to-r from-[#8B0035] to-[#F4C430] bg-clip-text text-transparent">

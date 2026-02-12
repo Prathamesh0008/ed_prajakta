@@ -1,9 +1,12 @@
+//app\cart\page.jsx
 'use client';
 import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Breadcrumbs from '@/components/Breadcrumb';
 import { useCart } from '@/app/context/CartContext';
+import products from '@/app/data/en';
+
 import { 
   Trash2, 
   Plus, 
@@ -21,11 +24,27 @@ import Link from 'next/link';
 export default function CartPage() {
   const { cartItems, removeFromCart, updateQty, clearCart } = useCart();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
+const getTierPrice = (productSlug, quantity) => {
+  const product = products[productSlug];
 
- const subtotal = cartItems.reduce(
-  (sum, item) => sum + Number(item.price) * item.qty,
-  0
-);
+  if (!product) return 0;
+
+  if (!product.pricing || product.pricing.length === 0) {
+    return Number(product.price ?? 0);
+  }
+
+  const tier = product.pricing.find(
+    (range) => quantity >= range.min && quantity <= range.max
+  );
+
+  return tier ? tier.price : product.pricing[0].price;
+};
+
+ const subtotal = cartItems.reduce((sum, item) => {
+  const unitPrice = getTierPrice(item.id, item.qty);
+  return sum + unitPrice * item.qty;
+}, 0);
+
 
   const shipping = subtotal > 50 ? 0 : 5.99;
   const tax = subtotal * 0.08;
@@ -110,7 +129,11 @@ export default function CartPage() {
                   </div>
 
                   <div className="divide-y divide-gray-100">
-                    {cartItems.map((item) => (
+                  {cartItems.map((item) => {
+  const unitPrice = getTierPrice(item.id, item.qty);
+
+  return (
+
                       <div key={item.id} className="p-6 hover:bg-gray-50/50 transition-colors">
                         <div className="flex flex-col sm:flex-row gap-4">
                           {/* Product Image */}
@@ -161,9 +184,19 @@ export default function CartPage() {
                                 >
                                   <Minus className="w-4 h-4 text-gray-600" />
                                 </button>
-                                <span className="w-12 text-center font-medium text-gray-900">
-                                  {item.qty}
-                                </span>
+                               <input
+  type="number"
+  min="1"
+  value={item.qty}
+  onChange={(e) => {
+    const value = parseInt(e.target.value);
+    if (!isNaN(value) && value >= 1) {
+      updateQty(item.id, value);
+    }
+  }}
+  className="w-16 text-center text-gray-900 border border-gray-300 rounded-md py-1 font-medium"
+/>
+
                                 <button
                                   onClick={() => updateQty(item.id, item.qty + 1)}
                                   className="w-8 h-8 rounded-lg border border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
@@ -174,12 +207,12 @@ export default function CartPage() {
 
                               {/* Price */}
                               <div className="text-right">
-<div className="text-lg font-bold text-[#8B0035]">
-  ${(Number(item.price) * item.qty).toFixed(2)}
-</div>
-<div className="text-sm text-gray-500">
-  ${Number(item.price).toFixed(2)} each
-</div>
+  <div className="text-lg font-bold text-[#8B0035]">
+        €{(unitPrice * item.qty).toFixed(2)}
+      </div>
+      <div className="text-sm text-gray-500">
+       €{unitPrice.toFixed(2)} each
+      </div>
 
 
                               </div>
@@ -187,7 +220,9 @@ export default function CartPage() {
                           </div>
                         </div>
                       </div>
-                    ))}
+                  );
+})}
+
                   </div>
                 </div>
 
@@ -236,7 +271,7 @@ export default function CartPage() {
                     <div className="space-y-4">
                       <div className="flex justify-between">
                         <span className="text-gray-600">Subtotal</span>
-                        <span className="font-medium text-gray-900">${subtotal.toFixed(2)}</span>
+                        <span className="font-medium text-gray-900">€{subtotal.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-600">Shipping</span>
@@ -244,20 +279,20 @@ export default function CartPage() {
                           {shipping === 0 ? (
                             <span className="text-green-600">Free</span>
                           ) : (
-                            `$${shipping.toFixed(2)}`
+                            `€€{shipping.toFixed(2)}`
                           )}
                         </span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-600">Tax</span>
-                        <span className="font-medium text-gray-900">${tax.toFixed(2)}</span>
+                        <span className="font-medium text-gray-900">€{tax.toFixed(2)}</span>
                       </div>
                       <div className="border-t border-gray-200 pt-4">
                         <div className="flex justify-between">
                           <span className="text-lg font-bold text-gray-900">Total</span>
                           <div className="text-right">
                             <div className="text-2xl font-bold text-[#8B0035]">
-                              ${total.toFixed(2)}
+                             €{total.toFixed(2)}
                             </div>
                             <div className="text-sm text-gray-500">
                               Including all taxes

@@ -1,3 +1,4 @@
+//components\AboutValues.jsx
 import { Target, Users, Award, Shield, Globe, Heart } from "lucide-react";
 
 export default function AboutValues() {

@@ -90,54 +90,7 @@ export default function ServicesPage() {
         ]}
       />
       
-      <main className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-        {/* Hero Section */}
-        {/* <section className="relative overflow-hidden bg-gradient-to-br from-white via-gray-50/50 to-gray-100">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-gradient-to-r from-[#8B0035]/10 to-[#F4C430]/10 blur-3xl" />
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-gradient-to-r from-[#F4C430]/10 to-[#8B0035]/10 blur-3xl" />
-          </div>
-
-          <div className="relative w-full px-6 py-16 lg:py-24 flex justify-center">
-            <div className="max-w-4xl text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#8B0035]/10 to-[#F4C430]/10 mb-6 justify-center mx-auto">
-                <span className="w-2 h-2 rounded-full bg-[#8B0035]" />
-                <span className="text-sm font-semibold text-[#8B0035]">
-                  Our Services
-                </span>
-              </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                Comprehensive <br />
-                <span className="bg-gradient-to-r from-[#8B0035] to-[#F4C430] bg-clip-text text-transparent">
-                  Pharmaceutical Solutions
-                </span>
-              </h1>
-
-              <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-3xl mx-auto">
-                ED Pharma delivers end-to-end pharmaceutical services with global compliance, 
-                precision manufacturing, and uncompromised quality standards for healthcare excellence worldwide.
-              </p>
-
-              <div className="flex flex-wrap gap-4 justify-center">
-                <button className="px-6 py-3 rounded-full text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer"
-                  style={{ backgroundColor: '#8B0035' }}
-                >
-                  Request Service Quote
-                </button>
-                <button className="px-6 py-3 rounded-full font-semibold border-2 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
-                  style={{ 
-                    borderColor: '#F4C430',
-                    color: '#8B0035'
-                  }}
-                >
-                  View Service Portfolio
-                </button>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
+     <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 overflow-hidden">
         {/* Main Services Section */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4">
@@ -152,7 +105,7 @@ export default function ServicesPage() {
 
             {/* Service Tabs */}
             <div className="mb-12">
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 mb-8">
                 {Object.keys(services).map((key) => (
                   <button
                     key={key}
@@ -170,7 +123,8 @@ export default function ServicesPage() {
 
               {/* Active Service Details */}
               <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-xl p-8 border border-gray-200">
-                <div className="flex items-start gap-6">
+            <div className="flex flex-col md:flex-row items-start gap-6">
+
                   <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-[#8B0035] to-[#F4C430] flex items-center justify-center text-white">
                     {services[activeTab].icon}
                   </div>
@@ -181,7 +135,8 @@ export default function ServicesPage() {
                     <p className="text-gray-600 mb-6">
                       {services[activeTab].description}
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
                       {services[activeTab].features.map((feature, index) => (
                         <div key={index} className="flex items-center gap-3">
                           <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
@@ -195,7 +150,8 @@ export default function ServicesPage() {
             </div>
 
             {/* Service Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+
               {Object.entries(services).map(([key, service]) => (
                 <div
                   key={key}
@@ -210,12 +166,12 @@ export default function ServicesPage() {
                   <p className="text-gray-600 mb-4">
                     {service.description}
                   </p>
-                  <button
+                  {/* <button
                     onClick={() => setActiveTab(key)}
                     className="text-[#8B0035] font-semibold hover:text-[#6b0028] transition-colors"
                   >
                     Learn More →
-                  </button>
+                  </button> */}
                 </div>
               ))}
             </div>
@@ -234,7 +190,8 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
               {[
                 {
                   icon: <FileText className="w-8 h-8 text-[#8B0035]" />,
@@ -312,9 +269,10 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="relative">
+            <div className="relative max-w-6xl mx-auto">
               {/* Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-[#8B0035] to-[#F4C430] hidden lg:block" />
+              <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 h-full w-1 bg-gradient-to-b from-[#8B0035] to-[#F4C430]" />
+
               
               <div className="space-y-12 lg:space-y-0">
                 {[
@@ -357,11 +315,12 @@ export default function ServicesPage() {
                 ].map((process, index) => (
                   <div
                     key={index}
-                    className={`flex flex-col lg:flex-row items-center gap-8 ${
+                     className={`flex flex-col lg:flex-row items-center lg:items-stretch gap-8 ${
                       index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
                     }`}
                   >
-                    <div className={`lg:w-1/2 ${index % 2 === 0 ? 'lg:text-right lg:pr-12' : 'lg:pl-12'}`}>
+                    <div className={`w-full lg:w-1/2 ${index % 2 === 0 ? 'lg:text-right lg:pr-12' : 'lg:pl-12'}`}>
+
                       <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6">
                         <div className="flex items-center gap-3 mb-4">
                           <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#8B0035] to-[#F4C430] flex items-center justify-center text-white font-bold">
@@ -373,7 +332,7 @@ export default function ServicesPage() {
                       </div>
                     </div>
                     
-                    <div className="relative">
+                    <div className="relative my-4 lg:my-0">
                       <div className="w-12 h-12 rounded-full bg-white border-4 border-white shadow-lg flex items-center justify-center">
                         <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#8B0035] to-[#F4C430] flex items-center justify-center text-white">
                           {process.icon}
@@ -399,7 +358,8 @@ export default function ServicesPage() {
               <p className="text-white/80 text-lg mb-10">
                 Join hundreds of healthcare providers and pharmaceutical companies who trust ED Pharma for comprehensive solutions.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
+             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
                 <button className="px-8 py-4 rounded-full bg-white text-[#8B0035] font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
                   Request Service Consultation
                 </button>
@@ -414,7 +374,8 @@ export default function ServicesPage() {
         {/* Stats Section */}
         <section className="py-16 lg:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+
               {[
                 { value: "50+", label: "Countries Served", icon: <Globe className="w-8 h-8" /> },
                 { value: "99.7%", label: "Quality Score", icon: <Award className="w-8 h-8" /> },

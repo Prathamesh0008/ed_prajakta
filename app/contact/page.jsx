@@ -59,7 +59,7 @@ export default function ContactPage() {
                     <label className="block text-gray-700 font-semibold mb-2">Name</label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-transparent outline-none transition-all"
+                      className="w-full text-gray-900 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-transparent outline-none transition-all"
                       placeholder="Your full name"
                     />
                   </div>
@@ -68,7 +68,7 @@ export default function ContactPage() {
                     <label className="block text-gray-700 font-semibold mb-2">Email</label>
                     <input
                       type="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-transparent outline-none transition-all"
+                      className="w-full text-gray-900 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-transparent outline-none transition-all"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -77,7 +77,7 @@ export default function ContactPage() {
                     <label className="block text-gray-700 font-semibold mb-2">Phone Number</label>
                     <input
                       type="tel"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-transparent outline-none transition-all"
+                      className="w-full text-gray-900 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-transparent outline-none transition-all"
                       placeholder="+123 456 7890"
                     />
                   </div>
@@ -86,7 +86,7 @@ export default function ContactPage() {
                     <label className="block text-gray-700 font-semibold mb-2">Message</label>
                     <textarea
                       rows="4"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-transparent outline-none transition-all"
+                      className="w-full text-gray-900 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-transparent outline-none transition-all"
                       placeholder="Your message here..."
                     />
                   </div>

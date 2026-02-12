@@ -38,7 +38,10 @@ export default function WishlistPage() {
   const getProductDetails = (productId) => {
     // Find product by ID (slug)
     const product = Object.values(products).find(p => p.slug === productId);
-    
+    const basePrice = product.pricing
+  ? product.pricing[0].price
+  : Number(product.price ?? 0);
+
     if (!product) return null;
     
     // Transform to match wishlist expectations
@@ -46,12 +49,14 @@ export default function WishlistPage() {
       id: product.slug,
       name: product.name,
       category: product.category,
-      price: parseFloat(product.price) || 0,
-      originalPrice: parseFloat(product.price) * 1.25, // 25% markup for original price
+     price: basePrice,
+originalPrice: basePrice * 1.25,
+ // 25% markup for original price
       discount: 25, // Default discount
       rating: 4.5, // Default rating
       reviews: 128, // Default reviews
-      inStock: true, // Default stock status
+     inStock: product.inStock !== false,
+// Default stock status
       image: product.image || "/products/placeholder.jpg",
       description: product.description,
       manufacturer: product.brand,
@@ -115,7 +120,8 @@ export default function WishlistPage() {
     return (
       <>
         <Navbar />
-        <div className="min-h-screen bg-gray-50 pt-20 pb-10">
+        <div className="min-h-screen bg-gray-50 pt-16 md:pt-20 pb-12">
+
           <div className="max-w-7xl mx-auto px-4">
             <div className="animate-pulse">
               <div className="h-8 bg-gray-200 rounded w-1/4 mb-8"></div>
@@ -170,7 +176,8 @@ export default function WishlistPage() {
             </div>
 
             {wishlistCount > 0 && (
-              <div className="flex items-center gap-3">
+  <div className="flex flex-col sm:flex-row w-full md:w-auto gap-3">
+
                 <button
                   onClick={handleMoveAllToCart}
                   className="px-4 py-2.5 bg-gradient-to-r from-[#8B0035] to-[#6b0028] text-white rounded-lg hover:opacity-90 transition-opacity font-medium flex items-center gap-2"
@@ -217,7 +224,8 @@ export default function WishlistPage() {
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
+
               {/* Wishlist Items */}
               <div className="lg:col-span-2 space-y-4">
                 {wishlist.map((item) => {
@@ -236,9 +244,10 @@ export default function WishlistPage() {
                       className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow"
                     >
                       <div className="p-4 sm:p-6">
-                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                      <div className="flex flex-col md:flex-row gap-5 md:gap-6">
+
                           {/* Product Image */}
-                          <div className="relative w-full sm:w-32 h-48 sm:h-32 bg-gray-100 rounded-lg overflow-hidden">
+                          <div className="relative w-full md:w-32 h-52 md:h-32 shrink-0 bg-gray-100 rounded-lg overflow-hidden">
                             <img
                               src={product.image}
                               alt={product.name}
@@ -313,7 +322,8 @@ export default function WishlistPage() {
                                 </div>
 
                                 {/* Price and Actions */}
-                                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+
                                   <div className="flex items-center gap-3">
                                     <div className="flex items-baseline gap-2">
                                       <span className="text-2xl font-bold text-[#8B0035]">
@@ -332,7 +342,8 @@ export default function WishlistPage() {
                                     </div>
                                   </div>
 
-                                  <div className="flex items-center gap-2">
+                                <div className="flex flex-wrap items-center gap-2">
+
                                     <button
                                       onClick={() => handleAddToCart(product.id)}
                                       disabled={!product.inStock || removing === product.id}
@@ -377,7 +388,8 @@ export default function WishlistPage() {
               </div>
 
               {/* Sidebar - Summary and Recommendations */}
-              <div className="space-y-6">
+           <div className="space-y-6 xl:sticky xl:top-24 h-fit">
+
                 {/* Wishlist Summary */}
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Wishlist Summary</h3>
@@ -451,7 +463,10 @@ export default function WishlistPage() {
                             </h4>
                             <div className="flex items-center justify-between mt-1">
                               <span className="text-sm font-bold text-[#8B0035]">
-                                ${parseFloat(product.price).toFixed(2)}
+                               ${product.pricing 
+  ? product.pricing[0].price.toFixed(2) 
+  : Number(product.price ?? 0).toFixed(2)}
+
                               </span>
                               <Link
                                 href={`/products/${product.slug}`}

@@ -1,3 +1,4 @@
+//components\AboutStats.jsx
 export default function AboutStats() {
   const stats = [
     {
@@ -60,7 +61,7 @@ export default function AboutStats() {
               and building lasting partnerships across the globe.
             </p>
             
-            {/* Stats Grid */}0000
+            {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (
                 <div 

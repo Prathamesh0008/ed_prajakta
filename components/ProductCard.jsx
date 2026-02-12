@@ -114,19 +114,27 @@ const liked = isInWishlist(product.id);
         {/* Quick Add to Cart */}
         <div className={`absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
           <button
-           onClick={() => {
-  if (!isAuthenticated) {
-    router.push(`/auth/signin?redirect=/products/${product.id}`);
-    return;
-  }
-  addToCart(product);
-}}
+  disabled={!product.inStock}
+  onClick={() => {
+    if (!product.inStock) return;
 
-            className="w-full py-3 rounded-lg bg-gradient-to-r from-[#8B0035] to-[#6b0028] text-white font-semibold flex items-center justify-center gap-2"
-          >
-            <ShoppingCart className="w-5 h-5" />
-            Add to Cart
-          </button>
+    if (!isAuthenticated) {
+      router.push(`/auth/signin?redirect=/products/${product.id}`);
+      return;
+    }
+
+    addToCart(product);
+  }}
+  className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all
+    ${product.inStock
+      ? "bg-gradient-to-r from-[#8B0035] to-[#6b0028] text-white"
+      : "bg-gray-400 text-white cursor-not-allowed"
+    }`}
+>
+  <ShoppingCart className="w-5 h-5" />
+  {product.inStock ? "Add to Cart" : "Out of Stock"}
+</button>
+
         </div>
       </div>
       
@@ -162,7 +170,7 @@ const liked = isInWishlist(product.id);
         {/* Price & Rating */}
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-2xl font-bold text-[#8B0035]">${Number(product.price || 0).toFixed(2)}</div>
+            <div className="text-2xl font-bold text-[#8B0035]">€{Number(product.price || 0).toFixed(2)}</div>
             <div className="flex items-center gap-1 mt-1">
               {[...Array(5)].map((_, i) => (
                 <Star

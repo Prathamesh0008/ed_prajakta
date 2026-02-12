@@ -54,7 +54,8 @@ export default function OrdersPage() {
     
     try {
       // Get REAL orders from localStorage
-      const userOrders = getUserOrders();
+    const userOrders = JSON.parse(localStorage.getItem('userOrders')) || [];
+
       
       if (userOrders && Array.isArray(userOrders)) {
         // Sort orders by date (newest first)

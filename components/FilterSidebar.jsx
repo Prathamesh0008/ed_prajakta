@@ -178,7 +178,7 @@ export default function FilterSidebar({
           </div>
 
           {/* Price */}
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <h4 className="font-semibold text-gray-700 mb-3">
               Price Range: ${priceRange[0]} - ${priceRange[1]}
             </h4>
@@ -198,7 +198,7 @@ export default function FilterSidebar({
               <span>$0</span>
               <span>$1000</span>
             </div>
-          </div>
+          </div> */}
 
           {/* Action Buttons */}
           <div className="space-y-3">
