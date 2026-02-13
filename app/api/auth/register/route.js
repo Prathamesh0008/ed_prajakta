@@ -1,3 +1,4 @@
+//app\api\auth\register\route.js
 import connectDB from "@/lib/mongodb";
 import User from "@/models/User";
 import bcrypt from "bcryptjs";

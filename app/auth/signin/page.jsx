@@ -86,8 +86,8 @@ export default function SignInPage() {
       
       if (result?.success) {
        // router.push('/account/profile');
-       const redirect = new URLSearchParams(window.location.search).get('redirect');
-router.push(redirect || '/account/profile');
+//        const redirect = new URLSearchParams(window.location.search).get('redirect');
+// router.push(redirect || '/account/profile');
 
       } else {
         setErrors({ submit: result?.error || 'Invalid credentials. Please try again.' });

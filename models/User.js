@@ -1,23 +1,32 @@
+//models\User.js
 import mongoose from "mongoose";
+
+const AddressSchema = new mongoose.Schema(
+  {
+    fullName: String,
+    phone: String,
+    email: String,
+    street: String,
+    apartment: String,
+    city: String,
+    state: String,
+    zipCode: String,
+    country: String,
+  },
+  { _id: false }
+);
 
 const UserSchema = new mongoose.Schema(
   {
     firstName: String,
     lastName: String,
-    email: {
-      type: String,
-      unique: true,
-    },
+    email: { type: String, unique: true, required: true, lowercase: true },
     phone: String,
-    password: String,
-    role: {
-      type: String,
-      default: "user",
-    },
-    lastLogin: Date,  // 👈 add this
+     password: { type: String, required: true },
+    address: AddressSchema,
+    role: { type: String, default: "user" },
   },
   { timestamps: true }
 );
 
-export default mongoose.models.User ||
-  mongoose.model("User", UserSchema);
+export default mongoose.models.User || mongoose.model("User", UserSchema);

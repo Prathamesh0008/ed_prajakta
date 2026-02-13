@@ -25,7 +25,9 @@ import Link from 'next/link';
 
 export default function ProfilePage() {
   const router = useRouter();
-  const { user, updateUser } = useAuth();
+  // const { user, updateUser } = useAuth();
+  const { user, loading } = useAuth();
+
   const [isEditing, setIsEditing] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [saveSuccess, setSaveSuccess] = useState(false);
@@ -43,23 +45,26 @@ export default function ProfilePage() {
   });
 
   useEffect(() => {
-    if (!user) {
-      router.push('/auth/signin');
-    } else {
-      setProfileData({
-        firstName: user.firstName || '',
-        lastName: user.lastName || '',
-        email: user.email || '',
-        phone: user.phone || '',
-        dateOfBirth: user.dateOfBirth || '',
-        address: user.address || '',
-        city: user.city || '',
-        state: user.state || '',
-        zipCode: user.zipCode || '',
-        country: user.country || 'India'
-      });
-    }
-  }, [user, router]);
+  if (!loading && !user) {
+    router.push('/auth/signin');
+  }
+
+  if (!loading && user) {
+    setProfileData({
+      firstName: user.firstName || '',
+      lastName: user.lastName || '',
+      email: user.email || '',
+      phone: user.phone || '',
+      dateOfBirth: user.dateOfBirth || '',
+      address: user.address || '',
+      city: user.city || '',
+      state: user.state || '',
+      zipCode: user.zipCode || '',
+      country: user.country || 'India'
+    });
+  }
+}, [user, loading, router]);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -99,9 +104,14 @@ export default function ProfilePage() {
     setIsEditing(false);
   };
 
-  if (!user) {
-    return null;
-  }
+if (loading) {
+  return <div className="p-10 text-center">Loading...</div>;
+}
+
+if (!user) {
+  return null;
+}
+
 
   return (
     <>
@@ -584,344 +594,14 @@ export default function ProfilePage() {
 
 
 
-// // app/account/profile/page.jsx
-// 'use client';
-// import { useState, useEffect } from 'react';
-// import { useRouter } from 'next/navigation';
-// import Navbar from '@/components/Navbar';
-// import Footer from '@/components/Footer';
-// import Breadcrumbs from '@/components/Breadcrumb';
-// import { useAuth } from '@/app/context/AuthContext';
-// import { 
-//   User, 
-//   Mail, 
-//   Phone, 
-//   Calendar, 
-//   MapPin, 
-//   Save,
-//   Edit2,
-//   X
-// } from 'lucide-react';
-// import Link from 'next/link';
 
-// export default function ProfilePage() {
-//   const router = useRouter();
-//   const { user, updateUser } = useAuth();
-//   const [isEditing, setIsEditing] = useState(false);
-//   const [profileData, setProfileData] = useState({
-//     firstName: '',
-//     lastName: '',
-//     email: '',
-//     phone: '',
-//     dateOfBirth: '',
-//     address: '',
-//     city: '',
-//     state: '',
-//     zipCode: ''
-//   });
 
-//   useEffect(() => {
-//     if (!user) {
-//       router.push('/auth/signin');
-//     } else {
-//       setProfileData({
-//         firstName: user.firstName || '',
-//         lastName: user.lastName || '',
-//         email: user.email || '',
-//         phone: user.phone || '',
-//         dateOfBirth: user.dateOfBirth || '',
-//         address: user.address || '',
-//         city: user.city || '',
-//         state: user.state || '',
-//         zipCode: user.zipCode || ''
-//       });
-//     }
-//   }, [user, router]);
 
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setProfileData(prev => ({ ...prev, [name]: value }));
-//   };
 
-//   const handleSave = () => {
-//     updateUser(profileData);
-//     setIsEditing(false);
-//     alert('Profile updated successfully!');
-//   };
 
-//   if (!user) {
-//     return null;
-//   }
 
-//   return (
-//     <>
-//       <Navbar />
-      
-//       <Breadcrumbs 
-//         items={[
-//           { name: "Home", href: "/" },
-//           { name: "Account", href: "/account" },
-//           { name: "Profile", href: null }
-//         ]}
-//       />
-      
-//       <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-8">
-//         <div className="max-w-4xl mx-auto px-4">
-//           <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-//             {/* Header */}
-//             <div className="bg-gradient-to-r from-[#8B0035]/10 to-[#F4C430]/10 p-6 sm:p-8">
-//               <div className="flex items-center justify-between">
-//                 <div className="flex items-center gap-4">
-//                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-r from-[#8B0035] to-[#F4C430] flex items-center justify-center text-white text-2xl sm:text-3xl font-bold">
-//                     {user.firstName?.charAt(0)}{user.lastName?.charAt(0)}
-//                   </div>
-//                   <div>
-//                     <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
-//                       {user.firstName} {user.lastName}
-//                     </h1>
-//                     <p className="text-gray-600">{user.email}</p>
-//                     <p className="text-sm text-gray-500">
-//                       Member since {new Date(user.createdAt).toLocaleDateString()}
-//                     </p>
-//                   </div>
-//                 </div>
-//                 <button
-//                   onClick={() => setIsEditing(!isEditing)}
-//                   className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors"
-//                 >
-//                   {isEditing ? (
-//                     <>
-//                       <X className="w-4 h-4" />
-//                       Cancel
-//                     </>
-//                   ) : (
-//                     <>
-//                       <Edit2 className="w-4 h-4" />
-//                       Edit Profile
-//                     </>
-//                   )}
-//                 </button>
-//               </div>
-//             </div>
 
-//             <div className="p-6 sm:p-8">
-//               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-//                 {/* Left Column - Personal Info */}
-//                 <div>
-//                   <h2 className="text-xl font-bold text-gray-900 mb-6">Personal Information</h2>
-                  
-//                   <div className="space-y-4">
-//                     <div>
-//                       <label className="block text-sm font-medium text-gray-700 mb-2">
-//                         <User className="w-4 h-4 inline mr-2" />
-//                         Full Name
-//                       </label>
-//                       {isEditing ? (
-//                         <div className="grid grid-cols-2 gap-3">
-//                           <input
-//                             type="text"
-//                             name="firstName"
-//                             value={profileData.firstName}
-//                             onChange={handleChange}
-//                             className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-[#8B0035] outline-none"
-//                             placeholder="First Name"
-//                           />
-//                           <input
-//                             type="text"
-//                             name="lastName"
-//                             value={profileData.lastName}
-//                             onChange={handleChange}
-//                             className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-[#8B0035] outline-none"
-//                             placeholder="Last Name"
-//                           />
-//                         </div>
-//                       ) : (
-//                         <p className="px-4 py-2.5 bg-gray-50 rounded-lg">{user.firstName} {user.lastName}</p>
-//                       )}
-//                     </div>
 
-//                     <div>
-//                       <label className="block text-sm font-medium text-gray-700 mb-2">
-//                         <Mail className="w-4 h-4 inline mr-2" />
-//                         Email Address
-//                       </label>
-//                       {isEditing ? (
-//                         <input
-//                           type="email"
-//                           name="email"
-//                           value={profileData.email}
-//                           onChange={handleChange}
-//                           className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-[#8B0035] outline-none"
-//                         />
-//                       ) : (
-//                         <p className="px-4 py-2.5 bg-gray-50 rounded-lg">{user.email}</p>
-//                       )}
-//                     </div>
 
-//                     <div>
-//                       <label className="block text-sm font-medium text-gray-700 mb-2">
-//                         <Phone className="w-4 h-4 inline mr-2" />
-//                         Phone Number
-//                       </label>
-//                       {isEditing ? (
-//                         <input
-//                           type="tel"
-//                           name="phone"
-//                           value={profileData.phone}
-//                           onChange={handleChange}
-//                           className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-[#8B0035] outline-none"
-//                         />
-//                       ) : (
-//                         <p className="px-4 py-2.5 bg-gray-50 rounded-lg">{user.phone}</p>
-//                       )}
-//                     </div>
 
-//                     <div>
-//                       <label className="block text-sm font-medium text-gray-700 mb-2">
-//                         <Calendar className="w-4 h-4 inline mr-2" />
-//                         Date of Birth
-//                       </label>
-//                       {isEditing ? (
-//                         <input
-//                           type="date"
-//                           name="dateOfBirth"
-//                           value={profileData.dateOfBirth}
-//                           onChange={handleChange}
-//                           className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-[#8B0035] outline-none"
-//                         />
-//                       ) : (
-//                         <p className="px-4 py-2.5 bg-gray-50 rounded-lg">
-//                           {user.dateOfBirth || 'Not set'}
-//                         </p>
-//                       )}
-//                     </div>
-//                   </div>
-//                 </div>
 
-//                 {/* Right Column - Address */}
-//                 <div>
-//                   <h2 className="text-xl font-bold text-gray-900 mb-6">Address</h2>
-                  
-//                   <div className="space-y-4">
-//                     <div>
-//                       <label className="block text-sm font-medium text-gray-700 mb-2">
-//                         <MapPin className="w-4 h-4 inline mr-2" />
-//                         Street Address
-//                       </label>
-//                       {isEditing ? (
-//                         <textarea
-//                           name="address"
-//                           value={profileData.address}
-//                           onChange={handleChange}
-//                           rows="3"
-//                           className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-[#8B0035] outline-none resize-none"
-//                           placeholder="Enter your full address"
-//                         />
-//                       ) : (
-//                         <p className="px-4 py-2.5 bg-gray-50 rounded-lg min-h-[60px]">
-//                           {user.address || 'No address saved'}
-//                         </p>
-//                       )}
-//                     </div>
-
-//                     <div className="grid grid-cols-2 gap-3">
-//                       <div>
-//                         <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
-//                         {isEditing ? (
-//                           <input
-//                             type="text"
-//                             name="city"
-//                             value={profileData.city}
-//                             onChange={handleChange}
-//                             className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-[#8B0035] outline-none"
-//                           />
-//                         ) : (
-//                           <p className="px-4 py-2.5 bg-gray-50 rounded-lg">{user.city || '—'}</p>
-//                         )}
-//                       </div>
-//                       <div>
-//                         <label className="block text-sm font-medium text-gray-700 mb-2">State</label>
-//                         {isEditing ? (
-//                           <input
-//                             type="text"
-//                             name="state"
-//                             value={profileData.state}
-//                             onChange={handleChange}
-//                             className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-[#8B0035] outline-none"
-//                           />
-//                         ) : (
-//                           <p className="px-4 py-2.5 bg-gray-50 rounded-lg">{user.state || '—'}</p>
-//                         )}
-//                       </div>
-//                     </div>
-
-//                     <div>
-//                       <label className="block text-sm font-medium text-gray-700 mb-2">ZIP Code</label>
-//                       {isEditing ? (
-//                         <input
-//                           type="text"
-//                           name="zipCode"
-//                           value={profileData.zipCode}
-//                           onChange={handleChange}
-//                           className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#8B0035] focus:border-[#8B0035] outline-none"
-//                         />
-//                       ) : (
-//                         <p className="px-4 py-2.5 bg-gray-50 rounded-lg">{user.zipCode || '—'}</p>
-//                       )}
-//                     </div>
-//                   </div>
-//                 </div>
-//               </div>
-
-//               {/* Save Button */}
-//               {isEditing && (
-//                 <div className="mt-8 pt-6 border-t border-gray-200">
-//                   <button
-//                     onClick={handleSave}
-//                     className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#8B0035] to-[#6b0028] text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
-//                   >
-//                     <Save className="w-5 h-5" />
-//                     Save Changes
-//                   </button>
-//                 </div>
-//               )}
-
-//               {/* Quick Links */}
-//               <div className="mt-8 pt-6 border-t border-gray-200">
-//                 <h3 className="text-lg font-bold text-gray-900 mb-4">Quick Links</h3>
-//                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-//                   <Link
-//                     href="/account/orders"
-//                     className="px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg text-gray-700 font-medium transition-colors"
-//                   >
-//                     My Orders
-//                   </Link>
-//                   <Link
-//                     href="/cart"
-//                     className="px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg text-gray-700 font-medium transition-colors"
-//                   >
-//                     View Cart
-//                   </Link>
-//                   <Link
-//                     href="/account/settings"
-//                     className="px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg text-gray-700 font-medium transition-colors"
-//                   >
-//                     Account Settings
-//                   </Link>
-//                   <Link
-//                     href="/products"
-//                     className="px-4 py-3 bg-gray-50 hover:bg-gray-100 rounded-lg text-gray-700 font-medium transition-colors"
-//                   >
-//                     Continue Shopping
-//                   </Link>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </main>
-
-//       <Footer />
-//     </>
-//   );
-// }

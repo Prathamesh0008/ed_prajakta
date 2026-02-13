@@ -142,75 +142,78 @@ const subtotal = cartItems.reduce(
     }
   };
 
-  const handlePlaceOrder = () => {
-    // Final validation before placing order
-    const isAddressValid = validateAddress();
-    
-    if (!isAddressValid) {
-      alert('Please fill all required address fields correctly');
+ const handlePlaceOrder = async () => {
+
+  const isAddressValid = validateAddress();
+
+  if (!isAddressValid) {
+    alert('Please fill all required address fields correctly');
+    return;
+  }
+
+  if (!paymentMethod) {
+    alert('Please select a payment method');
+    return;
+  }
+
+  setIsProcessing(true);
+
+  try {
+    const token = localStorage.getItem("edpharma_token");
+
+    if (!token) {
+      alert("Please login first");
+      setIsProcessing(false);
       return;
     }
-    
-    if (!paymentMethod) {
-      alert('Please select a payment method');
+
+    const response = await fetch("/api/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        orderId: `EDP${Date.now().toString().slice(-8)}`,
+        items: cartItems.map(item => ({
+          productId: item.id,
+          name: item.name,
+          price: Number(getPrice(item.price)),
+          quantity: item.qty,
+          image: item.image
+        })),
+        shippingAddress: address,
+        paymentMethod,
+        subtotal,
+        shipping,
+        tax,
+        total
+      })
+    });
+
+    const result = await response.json();
+
+    if (!result.success) {
+      alert("Order failed. Try again.");
+      setIsProcessing(false);
       return;
     }
 
-    setIsProcessing(true);
-    
-    // Generate order data
-    const orderData = {
-      orderId: `EDP${Date.now().toString().slice(-8)}`,
-      date: new Date().toISOString(),
-      address: { ...address },
-      paymentMethod: paymentMethod,
-      cartItems: cartItems,
-      subtotal: subtotal.toFixed(2),
-      shipping: shipping === 0 ? 'Free' : `$${shipping.toFixed(2)}`,
-      tax: tax.toFixed(2),
-      total: total.toFixed(2),
-      estimatedDelivery: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString()
-    };
+    clearCart();
+    setOrderPlaced(true);
+    setIsProcessing(false);
 
-   // Store last order
-localStorage.setItem('lastOrder', JSON.stringify(orderData));
+    setTimeout(() => {
+      router.push("/checkout/success");
+    }, 1500);
 
-// Save to user order history
-const existingOrders = JSON.parse(localStorage.getItem('userOrders')) || [];
-
-const newOrder = {
-  ...orderData,
-  id: orderData.orderId,
-  status: 'processing',
-  createdAt: new Date().toISOString(),
-  itemsDetails: cartItems.map(item => ({
-    id: item.id,
-    name: item.name,
-    price: item.price,
-    quantity: item.qty,
-    image: item.image
-  })),
-  shippingAddress: { ...address }
+  } catch (error) {
+    console.error("Order error:", error);
+    alert("Something went wrong");
+    setIsProcessing(false);
+  }
 };
 
-localStorage.setItem(
-  'userOrders',
-  JSON.stringify([...existingOrders, newOrder])
-);
-
-    
-    // Simulate order processing
-    setTimeout(() => {
-      setIsProcessing(false);
-      setOrderPlaced(true);
-      clearCart();
-      
-      // Redirect to success page with order data
-      setTimeout(() => {
-        router.push('/checkout/success');
-      }, 2000);
-    }, 1500);
-  };
 
   if (cartItems.length === 0 && !orderPlaced) {
     return (

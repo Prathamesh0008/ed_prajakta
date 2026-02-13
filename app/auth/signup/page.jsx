@@ -113,11 +113,17 @@ export default function SignUpPage() {
 try {
   const result = await signup(formData);
 
+  // if (result?.success) {
+  //   router.push('/account/profile');
+  // } else {
+  //   setErrors({ submit: 'Signup failed' });
+  // }
   if (result?.success) {
-    router.push('/account/profile');
-  } else {
-    setErrors({ submit: 'Signup failed' });
-  }
+  router.push('/account/profile');
+} else {
+  setErrors({ submit: result?.error || 'Signup failed' });
+}
+
 } catch (error) {
   setErrors({ submit: 'Registration failed. Please try again.' });
 } finally {
