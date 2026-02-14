@@ -1,17 +1,17 @@
-//app\api\admin\orders\route.js
 import connectDB from "@/lib/mongodb";
 import Order from "@/models/Order";
 import User from "@/models/User";
 import jwt from "jsonwebtoken";
 import { NextResponse } from "next/server";
 
-export async function GET(req) {
+export async function PUT(req, { params }) {
   try {
     await connectDB();
 
-    // 🔐 Get token
-    const authHeader = req.headers.get("authorization");
+    // ✅ NEXT 16 FIX — params must be awaited
+    const { id } = await params;
 
+    const authHeader = req.headers.get("authorization");
     if (!authHeader) {
       return NextResponse.json(
         { success: false, error: "Unauthorized" },
@@ -20,13 +20,9 @@ export async function GET(req) {
     }
 
     const token = authHeader.split(" ")[1];
-
-    // 🔓 Verify token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // 🔎 Find user
     const adminUser = await User.findById(decoded.userId);
-
     if (!adminUser || adminUser.role !== "admin") {
       return NextResponse.json(
         { success: false, error: "Access denied" },
@@ -34,20 +30,30 @@ export async function GET(req) {
       );
     }
 
-    // 📦 Fetch all orders
-    const orders = await Order.find()
-      .populate("user", "firstName lastName email phone")
-      .sort({ createdAt: -1 });
+    const { status } = await req.json();
+
+    const updatedOrder = await Order.findByIdAndUpdate(
+      id,
+      { $set: { status } },
+      { returnDocument: "after" } // fixes mongoose warning
+    );
+
+    if (!updatedOrder) {
+      return NextResponse.json(
+        { success: false, error: "Order not found" },
+        { status: 404 }
+      );
+    }
 
     return NextResponse.json({
       success: true,
-      orders
+      order: updatedOrder
     });
 
   } catch (error) {
-    console.error("Admin Orders Error:", error);
+    console.error("Order Update Error:", error);
     return NextResponse.json(
-      { success: false, error: "Failed to fetch orders" },
+      { success: false, error: "Update failed" },
       { status: 500 }
     );
   }

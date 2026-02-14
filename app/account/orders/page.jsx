@@ -48,34 +48,37 @@ export default function OrdersPage() {
     }
   }, [user, router]);
 
-  const loadUserOrders = () => {
-    setLoading(true);
-    setError('');
-    
-    try {
-      // Get REAL orders from localStorage
-    const userOrders = JSON.parse(localStorage.getItem('userOrders')) || [];
+ const loadUserOrders = async () => {
+  setLoading(true);
+  setError('');
 
-      
-      if (userOrders && Array.isArray(userOrders)) {
-        // Sort orders by date (newest first)
-        const sortedOrders = [...userOrders].sort((a, b) => 
-          new Date(b.date || b.createdAt) - new Date(a.date || a.createdAt)
-        );
-        
-        setOrders(sortedOrders);
-        setFilteredOrders(sortedOrders);
-      } else {
-        setOrders([]);
-        setFilteredOrders([]);
+  try {
+    const token = localStorage.getItem("edpharma_token");
+
+    const res = await fetch("/api/orders", {
+      headers: {
+        Authorization: `Bearer ${token}`
       }
-    } catch (err) {
-      setError('Failed to load orders. Please try again.');
-      console.error('Error loading orders:', err);
-    } finally {
-      setLoading(false);
+    });
+
+    const data = await res.json();
+
+    if (!data.success) {
+      setError("Failed to load orders");
+      return;
     }
-  };
+
+    setOrders(data.orders);
+    setFilteredOrders(data.orders);
+
+  } catch (err) {
+    console.error(err);
+    setError("Failed to load orders");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   useEffect(() => {
     let filtered = orders;
@@ -83,9 +86,11 @@ export default function OrdersPage() {
     // Apply search filter
     if (searchQuery) {
       filtered = filtered.filter(order =>
-        order.id?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        order._id?.toLowerCase().includes(searchQuery.toLowerCase())
+ ||
         order.orderId?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        order.itemsDetails?.some(item => 
+        order.items
+?.some(item => 
           item.name?.toLowerCase().includes(searchQuery.toLowerCase())
         )
       );
@@ -180,8 +185,11 @@ export default function OrdersPage() {
 
   const handleReorder = (order) => {
     // In real app, add items to cart
-    if (order.itemsDetails && order.itemsDetails.length > 0) {
-      alert(`Adding ${order.itemsDetails.length} items from order ${order.id || order.orderId} to cart`);
+    if (order.items
+ && order.items
+.length > 0) {
+      alert(`Adding ${order.items
+.length} items from order ${order.id || order.orderId} to cart`);
       // Here you would dispatch to cart context
     } else {
       alert('No items found in this order');
@@ -377,7 +385,10 @@ export default function OrdersPage() {
                           </div>
                           <div className="flex items-center gap-1">
                             <Package className="w-4 h-4" />
-                            <span>{order.items || order.itemsDetails?.length || 0} item{(order.items || order.itemsDetails?.length || 0) !== 1 ? 's' : ''}</span>
+                            <span>
+  {order.items?.length || 0} item{order.items?.length !== 1 ? 's' : ''}
+</span>
+
                           </div>
                           <div className="flex items-center gap-1">
                             <DollarSign className="w-4 h-4" />
@@ -408,14 +419,17 @@ export default function OrdersPage() {
                   </div>
 
                   {/* Order Items Preview */}
-                  {order.itemsDetails && order.itemsDetails.length > 0 && (
+                  {order.items
+ && order.items
+.length > 0 && (
                     <div className="p-6">
                       <div className="flex flex-col sm:flex-row gap-6">
                         {/* Order Items */}
                         <div className="flex-1">
                           <h4 className="font-semibold text-gray-900 mb-3">Items</h4>
                           <div className="space-y-3">
-                            {order.itemsDetails.slice(0, 2).map((item, idx) => (
+                            {order.items
+.slice(0, 2).map((item, idx) => (
                               <div key={item.id || idx} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
                                 <div className="w-12 h-12 rounded-lg bg-gray-200 flex items-center justify-center">
                                   {item.image ? (
@@ -436,13 +450,15 @@ export default function OrdersPage() {
                                 </div>
                               </div>
                             ))}
-                            {order.itemsDetails.length > 2 && (
+                            {order.items
+.length > 2 && (
                               <div className="text-center">
                                 <button
                                   onClick={() => handleViewOrderDetails(order)}
                                   className="text-[#8B0035] font-medium hover:underline text-sm"
                                 >
-                                  + {order.itemsDetails.length - 2} more items
+                                  + {order.items
+.length - 2} more items
                                 </button>
                               </div>
                             )}
@@ -556,15 +572,18 @@ export default function OrdersPage() {
                 {/* Right Column - Order Items & Payment */}
                 <div className="space-y-6">
                   {/* Order Items */}
-                  {selectedOrder.itemsDetails && selectedOrder.itemsDetails.length > 0 && (
+            {selectedOrder.items && selectedOrder.items.length > 0 && (
+
                     <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
                       <div className="p-6 border-b border-gray-200">
                         <h3 className="font-bold text-gray-900">
-                          Order Items ({selectedOrder.itemsDetails.length})
+                          Order Items ({selectedOrder.items
+.length})
                         </h3>
                       </div>
                       <div className="divide-y divide-gray-100 max-h-60 overflow-y-auto">
-                        {selectedOrder.itemsDetails.map((item, idx) => (
+                        {selectedOrder.items
+.map((item, idx) => (
                           <div key={item.id || idx} className="p-4 hover:bg-gray-50">
                             <div className="flex items-center gap-4">
                               <div className="w-16 h-16 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">

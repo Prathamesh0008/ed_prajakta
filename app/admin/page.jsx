@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import { Users, ShoppingCart, IndianRupee } from "lucide-react";
 
 export default function AdminDashboard() {
 
@@ -10,60 +11,98 @@ export default function AdminDashboard() {
     totalRevenue: 0
   });
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchStats = async () => {
-      const token = localStorage.getItem("edpharma_token");
+      try {
+        const token = localStorage.getItem("edpharma_token");
 
-      const res = await fetch("/api/admin/stats", {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-
-      const data = await res.json();
-
-      if (data.success) {
-        setStats({
-          totalUsers: data.totalUsers,
-          totalOrders: data.totalOrders,
-          totalRevenue: data.totalRevenue
+        const res = await fetch("/api/admin/stats", {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
         });
+
+        const data = await res.json();
+
+        if (data.success) {
+          setStats({
+            totalUsers: data.totalUsers,
+            totalOrders: data.totalOrders,
+            totalRevenue: data.totalRevenue
+          });
+        }
+      } catch (err) {
+        console.error("Failed to fetch stats");
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchStats();
   }, []);
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center py-20">
+        <div className="w-10 h-10 border-4 border-[#8B0035] border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
   return (
-    <>
-      <h2 className="text-3xl font-bold text-gray-900 mb-8">
+    <div className="w-full">
+
+      {/* Page Title */}
+      <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
         Admin Dashboard
       </h2>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      {/* Stats Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 
-        <div className="bg-white rounded-2xl p-6 shadow border">
-          <p className="text-gray-500 text-sm">Total Orders</p>
-          <h3 className="text-2xl font-bold text-[#8B0035] mt-2">
+        {/* Orders */}
+        <div className="bg-white rounded-2xl p-5 sm:p-6 shadow border border-gray-200 hover:shadow-lg transition">
+          <div className="flex items-center justify-between">
+            <p className="text-gray-500 text-sm font-medium">
+              Total Orders
+            </p>
+            <ShoppingCart className="w-6 h-6 text-[#8B0035]" />
+          </div>
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#8B0035] mt-4">
             {stats.totalOrders}
           </h3>
         </div>
 
-        <div className="bg-white rounded-2xl p-6 shadow border">
-          <p className="text-gray-500 text-sm">Total Users</p>
-          <h3 className="text-2xl font-bold text-[#8B0035] mt-2">
+        {/* Users */}
+        <div className="bg-white rounded-2xl p-5 sm:p-6 shadow border border-gray-200 hover:shadow-lg transition">
+          <div className="flex items-center justify-between">
+            <p className="text-gray-500 text-sm font-medium">
+              Total Users
+            </p>
+            <Users className="w-6 h-6 text-[#8B0035]" />
+          </div>
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#8B0035] mt-4">
             {stats.totalUsers}
           </h3>
         </div>
 
-        <div className="bg-white rounded-2xl p-6 shadow border">
-          <p className="text-gray-500 text-sm">Total Revenue</p>
-          <h3 className="text-2xl font-bold text-[#8B0035] mt-2">
-            ${Number(stats.totalRevenue).toFixed(2)}
+        {/* Revenue */}
+        <div className="bg-white rounded-2xl p-5 sm:p-6 shadow border border-gray-200 hover:shadow-lg transition">
+          <div className="flex items-center justify-between">
+            <p className="text-gray-500 text-sm font-medium">
+              Total Revenue
+            </p>
+            <IndianRupee className="w-6 h-6 text-[#8B0035]" />
+          </div>
+          <h3 className="text-2xl sm:text-3xl font-bold text-[#8B0035] mt-4">
+            €{Number(stats.totalRevenue).toFixed(2)}
           </h3>
         </div>
 
       </div>
-    </>
+
+    </div>
   );
 }

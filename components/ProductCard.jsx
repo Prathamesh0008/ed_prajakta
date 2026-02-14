@@ -113,9 +113,11 @@ const liked = isInWishlist(product.id);
         
         {/* Quick Add to Cart */}
         <div className={`absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-          <button
+    <button
   disabled={!product.inStock}
-  onClick={() => {
+  onClick={(e) => {
+    e.stopPropagation(); // prevent card click
+
     if (!product.inStock) return;
 
     if (!isAuthenticated) {
@@ -123,7 +125,16 @@ const liked = isInWishlist(product.id);
       return;
     }
 
-    addToCart(product);
+    addToCart({
+      id: product.id,
+      name: product.name,
+      image: product.image,
+      price: product.price,
+      qty: 1,
+      description: product.description
+    });
+
+ 
   }}
   className={`w-full py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all
     ${product.inStock
@@ -134,6 +145,8 @@ const liked = isInWishlist(product.id);
   <ShoppingCart className="w-5 h-5" />
   {product.inStock ? "Add to Cart" : "Out of Stock"}
 </button>
+
+
 
         </div>
       </div>
