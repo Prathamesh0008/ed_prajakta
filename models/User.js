@@ -23,7 +23,8 @@ const UserSchema = new mongoose.Schema(
     email: { type: String, unique: true, required: true, lowercase: true },
     phone: String,
      password: { type: String, required: true },
-    address: AddressSchema,
+    addresses: [AddressSchema],
+
     role: { type: String, default: "user" },
   },
   { timestamps: true }

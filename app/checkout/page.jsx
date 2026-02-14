@@ -33,7 +33,9 @@ export default function CheckoutPage() {
   const [isEditingAddress, setIsEditingAddress] = useState(false);
   const [isFormValid, setIsFormValid] = useState(false);
   const [addressErrors, setAddressErrors] = useState({});
-  
+  const [savedAddresses, setSavedAddresses] = useState([]);
+const [selectedAddressIndex, setSelectedAddressIndex] = useState(null);
+
   // User address state
   const [address, setAddress] = useState({
     fullName: '',
@@ -99,6 +101,27 @@ const subtotal = cartItems.reduce(
     setAddressErrors(errors);
     return Object.keys(errors).length === 0;
   };
+useEffect(() => {
+  const fetchAddresses = async () => {
+    const token = localStorage.getItem("edpharma_token");
+    if (!token) return;
+
+    const res = await fetch("/api/users/addresses", {
+
+      headers: { Authorization: `Bearer ${token}` }
+    });
+
+    const data = await res.json();
+
+    if (data.success && data.addresses.length > 0) {
+      setSavedAddresses(data.addresses);
+      setSelectedAddressIndex(0);
+      setAddress(data.addresses[0]); // auto-select first
+    }
+  };
+
+  fetchAddresses();
+}, []);
 
   // Check if form is valid
   useEffect(() => {
@@ -198,6 +221,17 @@ const subtotal = cartItems.reduce(
       setIsProcessing(false);
       return;
     }
+// ✅ Save address to Mongo if checkbox checked
+if (saveAddress) {
+  await fetch("/api/users/save-address", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`
+    },
+    body: JSON.stringify(address)
+  });
+}
 
     clearCart();
     setOrderPlaced(true);
@@ -368,6 +402,38 @@ const subtotal = cartItems.reduce(
                     )}
                   </button>
                 </div>
+
+{savedAddresses.length > 0 && (
+  <div className="mb-6 space-y-3">
+    <h3 className="font-semibold text-gray-900">
+      Saved Addresses
+    </h3>
+
+    {savedAddresses.map((addr, index) => (
+      <div
+        key={index}
+        onClick={() => {
+          setSelectedAddressIndex(index);
+          setAddress(addr);
+          setIsEditingAddress(false);
+        }}
+        className={`p-4 border rounded-lg cursor-pointer transition ${
+          selectedAddressIndex === index
+            ? "border-[#8B0035] bg-[#8B0035]/5"
+            : "border-gray-300 hover:border-gray-400"
+        }`}
+      >
+        <p className="font-medium">{addr.fullName}</p>
+        <p className="text-sm text-gray-600">
+          {addr.street}, {addr.city}
+        </p>
+        <p className="text-sm text-gray-600">
+          {addr.phone}
+        </p>
+      </div>
+    ))}
+  </div>
+)}
 
                 {isEditingAddress ? (
                   <div className="space-y-4">
